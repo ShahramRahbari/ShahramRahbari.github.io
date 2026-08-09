@@ -438,8 +438,22 @@ tbody tr:last-child td{border-bottom:0}
   25%{opacity:1}75%{opacity:1}100%{transform:translateY(14px);opacity:0}}
 
 /* ---- FIG 2: quadrant ---- */
-.quad{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;position:relative;
-  padding:0 0 1.9rem 1.9rem}
+.quad{display:flex;flex-direction:column;gap:.95rem}
+
+.qaxis{display:flex;align-items:center;gap:.5rem;font-family:var(--fa);
+  font-size:.76rem;font-weight:700;line-height:1.9;color:var(--text-2)}
+.qaxis .qname{flex:none}
+.qaxis .qend{flex:none;font-size:.72rem;color:var(--brand-deep);background:var(--surface-2);
+  border:1px solid var(--line-soft);border-radius:999px;padding:.03rem .5rem}
+.qaxis .qline{flex:1;height:1px;min-width:.8rem}
+.qaxis .qline.a{background:linear-gradient(to left,var(--line-soft),var(--line))}
+.qaxis .qline.b{background:linear-gradient(to left,var(--line),var(--brand))}
+
+.qrow{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
+.qrl{grid-column:1 / -1;display:flex;align-items:center;gap:.55rem;font-family:var(--fa);
+  font-size:.76rem;font-weight:700;line-height:1.9;color:var(--text-3)}
+.qrl::after{content:"";flex:1;height:1px;background:var(--line-soft)}
+
 .qc{border:1px solid var(--line);border-radius:12px;padding:.9rem .85rem;background:var(--surface);
   min-height:6.4rem;display:flex;flex-direction:column;justify-content:center}
 .qc b{display:block;font-size:.95rem;font-weight:800;line-height:1.7;color:var(--text);margin:0 0 .3rem}
@@ -452,10 +466,18 @@ tbody tr:last-child td{border-bottom:0}
 .js-on .qc.win{animation:qPulse 3.4s ease-in-out infinite}
 @keyframes qPulse{0%,100%{box-shadow:0 0 0 0 rgba(29,164,235,0)}
   50%{box-shadow:0 0 0 5px rgba(29,164,235,.18)}}
-.qax{position:absolute;font-family:var(--fa);font-weight:700;font-size:.74rem;color:var(--text-3)}
-.qax.x{bottom:.35rem;inset-inline-start:1.9rem;inset-inline-end:0;text-align:center}
-.qax.y{inset-inline-start:.1rem;top:0;bottom:1.9rem;writing-mode:vertical-rl;
-  display:flex;align-items:center;justify-content:center;transform:rotate(180deg)}
+
+@media(max-width:480px){
+  .qrow{grid-template-columns:1fr}
+  .qaxis .qend,.qaxis .qline{display:none}
+  .qc{min-height:0}
+  .qc::before{content:attr(data-rel);align-self:flex-start;font-family:var(--fa);
+    font-size:.7rem;font-weight:700;line-height:1.85;border-radius:999px;padding:.02rem .5rem;
+    margin:0 0 .5rem;color:var(--brand-deep);background:var(--surface-2);
+    border:1px solid var(--line-soft)}
+  .qc.win::before{color:#04121B;background:rgba(255,255,255,.35);border-color:rgba(4,18,27,.18)}
+  .qc.bad::before{color:var(--warn-text);background:transparent;border-color:var(--warn-line)}
+}
 
 /* ---- FIG 3: orbit states ---- */
 .orbits{display:grid;gap:.8rem;grid-template-columns:1fr 1fr}
@@ -812,31 +834,46 @@ html,body{transition:background-color .28s ease,color .28s ease}
     <p class="rv">سوال اول این است که آیا این منبع قابل اعتماد است. این محور مستقل از کوئری است. برای یک سایت مشخص، جوابش تقریبا ثابت میماند، چه کاربر دنبال چه چیزی بگردد.</p>
     <p class="rv">سوال دوم این است که آیا این سند به این کوئری مشخص مربوط است. این محور کاملا وابسته به کوئری است و برای هر جستجو از نو محاسبه میشود.</p>
 
-    <figure class="fig rv">
-      <div class="fig-body">
-        <div class="quad">
-          <div class="qc">
-            <b>سایت معتبر عمومی</b>
-            <span>برای این کوئری خاص حرفی برای گفتن ندارد</span>
-          </div>
-          <div class="qc win">
-            <b>منبع معتبر و مرتبط</b>
-            <span>هدف</span>
-          </div>
-          <div class="qc bad">
-            <b>نه معتبر نه مرتبط</b>
-            <span>هیچ محوری امتیاز ندارد</span>
-          </div>
-          <div class="qc">
-            <b>دقیقا درباره همین است</b>
-            <span>ولی منبع قابل اتکایی شناخته نمیشود</span>
-          </div>
-          <span class="qax x">ربط به کوئری، وابسته به جستجو</span>
-          <span class="qax y">کیفیت منبع، مستقل از جستجو</span>
+<figure class="fig rv">
+  <div class="fig-body">
+    <div class="quad">
+
+      <div class="qaxis">
+        <span class="qend">کم</span>
+        <span class="qline a"></span>
+        <span class="qname">ربط به کوئری، وابسته به جستجو</span>
+        <span class="qline b"></span>
+        <span class="qend">زیاد</span>
+      </div>
+
+      <div class="qrow">
+        <span class="qrl">کیفیت منبع بالا</span>
+        <div class="qc" data-rel="ربط کم">
+          <b>سایت معتبر عمومی</b>
+          <span>برای این کوئری خاص حرفی برای گفتن ندارد</span>
+        </div>
+        <div class="qc win" data-rel="ربط زیاد">
+          <b>منبع معتبر و مرتبط</b>
+          <span>هدف</span>
         </div>
       </div>
-      <figcaption class="fig-cap"><b>FIG. 2</b> چهار وضعیت ممکن روی دو محور. اکثر پروژه هایی که شکست میخورند در یکی از دو خانه پایین یا خانه بالا سمت راست گیر کرده اند.</figcaption>
-    </figure>
+
+      <div class="qrow">
+        <span class="qrl">کیفیت منبع پایین</span>
+        <div class="qc bad" data-rel="ربط کم">
+          <b>نه معتبر نه مرتبط</b>
+          <span>هیچ محوری امتیاز ندارد</span>
+        </div>
+        <div class="qc" data-rel="ربط زیاد">
+          <b>دقیقا درباره همین است</b>
+          <span>ولی منبع قابل اتکایی شناخته نمیشود</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <figcaption class="fig-cap"><b>FIG. 2</b> چهار وضعیت ممکن روی دو محور. محور عمودی مستقل از کوئری است و محور افقی برای هر جستجو از نو حساب میشود. اکثر پروژه هایی که شکست میخورند در یکی از دو خانه پایین یا خانه بالا سمت راست گیر کرده اند.</figcaption>
+</figure>
 
     <p class="rv">فرض کنید ترافیک سایتتان افت کرده است. اگر ندانید مشکل روی کدام محور است، شش ماه وقت را روی کار اشتباه میگذارید.</p>
     <p class="rv">اگر مشکل روی محور کیفیت باشد، هر چقدر محتوای موضوعی تر تولید کنید فایده ندارد. اگر مشکل روی محور ربط باشد، هر چقدر روی اعتماد و شفافیت کار کنید جواب نمیدهد.</p>
