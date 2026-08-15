@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What Is Topical Authority? A Patent- and Court-Document-Based Analysis</title>
+<meta name="description" content="Topical Authority, Coverage Authority, and the siteFocusScore and siteRadius fields. What the patents, DOJ court documents, and the Content Warehouse leak actually say, with a measurement method and an execution framework.">
+<link rel="canonical" href="https://shahramrahbari.github.io/topical-authority-en.html">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="Shahram Rahbari">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#08131C">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Shahram Rahbari — Document-Based SEO Analysis">
+<meta property="og:title" content="What Is Topical Authority?">
+<meta property="og:description" content="Topical Authority, Coverage Authority, and the siteFocusScore and siteRadius fields. What the patents, DOJ court documents, and the Content Warehouse leak actually say, with a measurement method and an execution framework.">
+<meta property="og:url" content="https://shahramrahbari.github.io/topical-authority-en.html">
+<meta property="article:author" content="Shahram Rahbari">
+<meta property="article:section" content="Content Architecture and SEO">
+<meta property="article:tag" content="Topical Authority">
+<meta property="article:tag" content="Coverage Authority">
+<meta property="article:tag" content="siteFocusScore">
+<meta property="article:tag" content="siteRadius">
+<meta property="article:tag" content="Google leak">
+<meta property="article:tag" content="Content Warehouse">
+<meta property="article:tag" content="Topic Map">
+<meta property="article:tag" content="Semantic SEO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Is Topical Authority?">
+<meta name="twitter:description" content="Topical Authority, Coverage Authority, and the siteFocusScore and siteRadius fields. What the patents, DOJ court documents, and the Content Warehouse leak actually say, with a measurement method and an execution framework.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://shahramseo.com/#person","name":"Shahram Rahbari","url":"https://shahramseo.com/","sameAs":["https://www.linkedin.com/in/shahramrahbari","https://shrah.net"],"jobTitle":"Senior SEO Consultant","knowsAbout":["SEO","Google algorithms","search engine patents","information retrieval"]},{"@type":"WebSite","@id":"https://shahramrahbari.github.io/#website","url":"https://shahramrahbari.github.io/","name":"Shahram Rahbari — Document-Based SEO Analysis","inLanguage":"en","publisher":{"@id":"https://shahramseo.com/#person"}},{"@type":"WebPage","@id":"https://shahramrahbari.github.io/topical-authority-en.html#webpage","url":"https://shahramrahbari.github.io/topical-authority-en.html","name":"What Is Topical Authority? A Patent- and Court-Document-Based Analysis","description":"Topical Authority, Coverage Authority, and the siteFocusScore and siteRadius fields. What the patents, DOJ court documents, and the Content Warehouse leak actually say, with a measurement method and an execution framework.","isPartOf":{"@id":"https://shahramrahbari.github.io/#website"},"inLanguage":"en","datePublished":"DATE_REQUIRED","dateModified":"DATE_REQUIRED","license":"https://creativecommons.org/licenses/by/4.0/","breadcrumb":{"@id":"https://shahramrahbari.github.io/topical-authority-en.html#crumb"}},{"@type":"BreadcrumbList","@id":"https://shahramrahbari.github.io/topical-authority-en.html#crumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shahramrahbari.github.io/"},{"@type":"ListItem","position":2,"name":"What Is Topical Authority?","item":"https://shahramrahbari.github.io/topical-authority-en.html"}]},{"@type":"TechArticle","@id":"https://shahramrahbari.github.io/topical-authority-en.html#article","headline":"What Is Topical Authority?","description":"Topical Authority, Coverage Authority, and the siteFocusScore and siteRadius fields. What the patents, DOJ court documents, and the Content Warehouse leak actually say, with a measurement method and an execution framework.","mainEntityOfPage":{"@id":"https://shahramrahbari.github.io/topical-authority-en.html#webpage"},"author":{"@id":"https://shahramseo.com/#person"},"publisher":{"@id":"https://shahramseo.com/#person"},"datePublished":"DATE_REQUIRED","dateModified":"DATE_REQUIRED","inLanguage":"en","articleSection":"Content Architecture and SEO","keywords":"Topical Authority, Coverage Authority, siteFocusScore, siteRadius, Google leak, Content Warehouse, Topic Map, Semantic SEO","wordCount":13832,"isAccessibleForFree":true,"proficiencyLevel":"Expert","license":"https://creativecommons.org/licenses/by/4.0/","citation":["https://www.justice.gov/atr/case/us-and-plaintiff-states-v-google-llc-1","https://developers.google.com/search/docs/essentials/spam-policies","https://patents.google.com/"]}]}</script>
+<style>
+
+/* ================= TOKENS ================= */
+:root{
+  --brand:#1DA4EB; --brand-deep:#0B6FA8; --brand-2:#7B61FF;
+  --paper:#F7FAFC; --surface:#FFFFFF; --surface-2:#F0F5F9;
+  --line:#D7E2EA; --line-soft:#E7EEF3;
+  --text:#0E1A24; --text-2:#3D5162; --text-3:#6A7F90;
+  --mono-bg:#F2F6F9; --mono-text:#25404F;
+  --warn-bg:#FFF5E9; --warn-line:#EFAF6B; --warn-text:#8A4B06; --warn-dot:#E07C10;
+  --t-court:#C2334D; --t-official:#1E8E5A; --t-patent:#1D6FE0; --t-leak:#7B4DD8; --t-study:#B4700D;
+  --shadow:0 1px 2px rgba(14,26,36,.05), 0 10px 30px -14px rgba(14,26,36,.16);
+  --shadow-lift:0 2px 4px rgba(14,26,36,.06), 0 26px 50px -22px rgba(14,26,36,.28);
+  --radius:16px; --col:42rem;
+  --fa:-apple-system,"Segoe UI",system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono","JetBrains Mono","Cascadia Code",Menlo,Consolas,"Liberation Mono",monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --brand:#39B4F5; --brand-deep:#7FD3FF; --brand-2:#9B87FF;
+    --paper:#0A1018; --surface:#111C26; --surface-2:#16232F;
+    --line:#27394A; --line-soft:#1E2E3C;
+    --text:#E6EFF5; --text-2:#B0C3D1; --text-3:#87A0B2;
+    --mono-bg:#0D1922; --mono-text:#B7D3E3;
+    --warn-bg:#241906; --warn-line:#7A5416; --warn-text:#F0BE7C; --warn-dot:#F5A623;
+    --t-court:#FF7D93; --t-official:#4FD39A; --t-patent:#6FAEFF; --t-leak:#B69BFF; --t-study:#F0B54A;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+    --shadow-lift:0 2px 4px rgba(0,0,0,.5), 0 26px 50px -22px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="light"]{
+  --brand:#1DA4EB;--brand-deep:#0B6FA8;--brand-2:#7B61FF;
+  --paper:#F7FAFC;--surface:#FFFFFF;--surface-2:#F0F5F9;
+  --line:#D7E2EA;--line-soft:#E7EEF3;
+  --text:#0E1A24;--text-2:#3D5162;--text-3:#6A7F90;
+  --mono-bg:#F2F6F9;--mono-text:#25404F;
+  --warn-bg:#FFF5E9;--warn-line:#EFAF6B;--warn-text:#8A4B06;--warn-dot:#E07C10;
+  --t-court:#C2334D;--t-official:#1E8E5A;--t-patent:#1D6FE0;--t-leak:#7B4DD8;--t-study:#B4700D;
+  --shadow:0 1px 2px rgba(14,26,36,.05), 0 10px 30px -14px rgba(14,26,36,.16);
+  --shadow-lift:0 2px 4px rgba(14,26,36,.06), 0 26px 50px -22px rgba(14,26,36,.28);
+}
+:root[data-theme="dark"]{
+  --brand:#39B4F5;--brand-deep:#7FD3FF;--brand-2:#9B87FF;
+  --paper:#0A1018;--surface:#111C26;--surface-2:#16232F;
+  --line:#27394A;--line-soft:#1E2E3C;
+  --text:#E6EFF5;--text-2:#B0C3D1;--text-3:#87A0B2;
+  --mono-bg:#0D1922;--mono-text:#B7D3E3;
+  --warn-bg:#241906;--warn-line:#7A5416;--warn-text:#F0BE7C;--warn-dot:#F5A623;
+  --t-court:#FF7D93;--t-official:#4FD39A;--t-patent:#6FAEFF;--t-leak:#B69BFF;--t-study:#F0B54A;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+  --shadow-lift:0 2px 4px rgba(0,0,0,.5), 0 26px 50px -22px rgba(0,0,0,.8);
+}
+
+/* ================= BASE =================
+   iOS: overflow-x is deliberately NOT set on body.
+   html + body together breaks scrolling after pinch zoom. */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:clip}
+body{
+  margin:0;background:var(--paper);color:var(--text);
+  font-family:var(--fa);font-size:1.08rem;line-height:1.75;font-weight:400;
+  -webkit-font-smoothing:antialiased;overflow-wrap:break-word;
+}
+p{margin:0 0 1.45em}
+a{color:var(--brand-deep);text-underline-offset:.32em;text-decoration-thickness:1px}
+a:hover{color:var(--brand)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+strong,b{font-weight:700;color:var(--text)}
+.en{font-family:var(--mono);font-size:.9em;letter-spacing:-.01em;direction:ltr;unicode-bidi:isolate;overflow-wrap:anywhere}
+
+/* ================= PROGRESS ================= */
+.progress{position:fixed;inset:0 0 auto 0;height:3px;z-index:60;background:linear-gradient(to left,var(--brand),var(--brand-2));transform:scaleX(0);transform-origin:right center;will-change:transform}
+@supports (animation-timeline:scroll()){.progress{animation:progFill linear both;animation-timeline:scroll(root block)}}
+@keyframes progFill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* ================= HEADER ================= */
+.masthead{position:relative;background:#08131C;color:#EAF3F9;padding:clamp(3.4rem,9vw,6rem) 1.25rem clamp(2.8rem,7vw,4.6rem);overflow:hidden;isolation:isolate}
+.masthead::before{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background-image:linear-gradient(to right,rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.055) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(120% 90% at 70% 0%,#000 10%,transparent 78%);
+  -webkit-mask-image:radial-gradient(120% 90% at 70% 0%,#000 10%,transparent 78%);
+}
+.masthead::after{content:"";position:absolute;z-index:-1;width:760px;height:760px;top:-58%;right:-18%;border-radius:50%;background:radial-gradient(circle,rgba(29,164,235,.30),rgba(123,97,255,.13) 42%,transparent 68%);filter:blur(6px)}
+.mast-inner{max-width:var(--col);margin:0 auto;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.82rem;line-height:1.9;font-weight:600;color:#9EC9E4;border:1px solid rgba(158,201,228,.32);border-radius:999px;padding:.28rem .95rem;margin:0 0 1.6rem}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--brand);flex:none;box-shadow:0 0 0 3px rgba(29,164,235,.22);animation:pulseDot 2.6s ease-in-out infinite}
+h1{font-size:clamp(1.62rem,5.2vw,2.75rem);line-height:1.5;font-weight:800;margin:0 0 1.1rem;letter-spacing:-.012em;color:#FFFFFF;text-wrap:balance}
+.deck{font-size:clamp(1rem,2.9vw,1.18rem);line-height:2;color:#A9C6D8;margin:0 0 2.1rem;max-width:34rem}
+.byline{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .9rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.12);font-size:.9rem;color:#8FB0C4;line-height:2}
+.byline a{color:#EAF3F9;font-weight:700;text-decoration-color:rgba(29,164,235,.75)}
+.byline a:hover{color:var(--brand)}
+.byline .sep{color:rgba(255,255,255,.24)}
+.themebtn{position:absolute;top:1.1rem;left:1.1rem;z-index:5;width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);color:#DCEAF3;font-size:1.05rem;cursor:pointer;display:none;align-items:center;justify-content:center;font-family:var(--fa)}
+.js-on .themebtn{display:flex}
+
+/* ================= LAYOUT ================= */
+.wrap{max-width:var(--col);margin:0 auto;padding:0 1.25rem 5rem}
+.lede{font-size:1.13rem;line-height:2.05;color:var(--text-2);margin-top:2.8rem}
+
+/* ================= SECTION HEADS ================= */
+.sec{margin-top:3.6rem;scroll-margin-top:1.2rem}
+.sec-head{margin:0 0 1.5rem}
+.rule{position:relative;height:4px;width:86px;border-radius:99px;background:linear-gradient(to right,var(--brand) 0%,var(--brand-2) 100%);transform:scaleX(1);transform-origin:left center;margin-bottom:1.05rem}
+.rule i{position:absolute;top:50%;right:-1px;translate:0 -50%;width:9px;height:9px;border-radius:50%;background:var(--brand-2);box-shadow:0 0 0 3px color-mix(in srgb,var(--brand-2) 22%,transparent),0 0 14px 2px color-mix(in srgb,var(--brand-2) 60%,transparent);animation:pulseDot 2.4s ease-in-out infinite}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.82)}}
+.sec h2{font-size:clamp(1.24rem,4.1vw,1.68rem);line-height:1.64;font-weight:800;margin:0;letter-spacing:-.008em;text-wrap:balance}
+.sec h3{font-size:clamp(1.18rem,3.8vw,1.4rem);line-height:1.6;font-weight:800;margin:2.6rem 0 1rem;letter-spacing:-.006em}
+
+/* ================= DIVIDER ================= */
+.divider{position:relative;height:1px;margin:4.2rem 0;overflow:hidden;background:linear-gradient(to right,transparent,var(--line) 18%,var(--line) 82%,transparent)}
+.divider::after{content:"";position:absolute;top:50%;right:50%;translate:50% -50%;width:9px;height:9px;rotate:45deg;background:var(--paper);border:1.5px solid var(--brand);border-radius:2px}
+.divider span{position:absolute;inset:0;background:linear-gradient(to right,transparent,color-mix(in srgb,var(--brand) 70%,transparent),transparent);transform:scaleX(.28);transform-origin:left center;opacity:.85}
+@supports (animation-timeline:view()){.divider span{animation:sheen 1s linear both;animation-timeline:view();animation-range:entry 12% cover 42%}}
+@keyframes sheen{from{transform:translateX(-120%) scaleX(.28)}to{transform:translateX(120%) scaleX(.28)}}
+
+/* ================= TOC ================= */
+.toc{margin:3.2rem 0 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.toc>summary{list-style:none;cursor:pointer;padding:1.15rem 1.35rem;font-weight:700;font-size:1rem;line-height:1.9;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.toc>summary::-webkit-details-marker{display:none}
+.toc>summary::after{content:"";width:9px;height:9px;flex:none;border-left:2px solid var(--text-3);border-bottom:2px solid var(--text-3);rotate:-45deg;transition:rotate .25s ease;margin-bottom:3px}
+.toc[open]>summary::after{rotate:135deg;margin-bottom:-3px}
+.toc>summary b{font-family:var(--mono);font-size:.72rem;font-weight:600;flex:none;color:var(--brand-deep);background:var(--surface-2);border:1px solid var(--line-soft);border-radius:6px;padding:.1rem .45rem}
+.toc ol{margin:0;padding:.4rem 1.35rem 1.5rem;list-style:none;counter-reset:toc;border-top:1px solid var(--line-soft)}
+.toc li{counter-increment:toc}
+.toc li a{display:flex;gap:.9rem;align-items:baseline;padding:.78rem .2rem;color:var(--text-2);text-decoration:none;font-size:1rem;line-height:1.85;border-bottom:1px dashed var(--line-soft)}
+.toc li:last-child a{border-bottom:0}
+.toc li a::before{content:counter(toc,decimal);font-family:var(--mono);font-size:.76rem;color:var(--brand);min-width:1.5rem;flex:none;font-weight:600}
+
+/* ================= TLDR ================= */
+.tldr{margin:2.6rem 0 0;background:var(--surface);border:1px solid var(--line);border-right:4px solid var(--brand);border-radius:var(--radius);padding:1.5rem 1.4rem 1.2rem;box-shadow:var(--shadow)}
+.tldr h2{font-size:.94rem;font-weight:800;color:var(--brand-deep);margin:0 0 1rem;line-height:1.8}
+.tldr ul{margin:0;padding:0;list-style:none}
+.tldr li{position:relative;padding:0 0 .95rem 1.4rem;font-size:1.02rem;line-height:1.95;color:var(--text-2)}
+.tldr li:last-child{padding-bottom:0}
+.tldr li::before{content:"";position:absolute;left:.28rem;top:.86em;width:6px;height:6px;border-radius:2px;rotate:45deg;background:var(--brand)}
+
+/* ================= TIER BADGE ================= */
+.tier{display:inline-flex;align-items:center;gap:.42rem;font-size:.76rem;font-weight:700;line-height:1.8;padding:.16rem .6rem;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.tier::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;flex:none}
+.t-court{color:var(--t-court)} .t-official{color:var(--t-official)}
+.t-patent{color:var(--t-patent)} .t-leak{color:var(--t-leak)} .t-study{color:var(--t-study)}
+
+/* ================= DOC CARD ================= */
+.doc{margin:2.4rem 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.doc-top{padding:1.35rem 1.35rem 1.15rem}
+.doc-top .tier{margin-bottom:.9rem}
+.doc-fa{font-size:1.05rem;line-height:2.05;color:var(--text);margin:0;font-weight:500}
+.doc-en{background:var(--mono-bg);border-top:1px dashed var(--line);padding:1.15rem 1.35rem 1.2rem;direction:ltr;text-align:left}
+.doc-en q{display:block;font-family:var(--mono);font-size:.85rem;line-height:1.95;color:var(--mono-text);quotes:'"' '"';overflow-wrap:anywhere}
+.doc-cite{display:block;margin-top:.85rem;font-family:var(--mono);font-size:.71rem;line-height:1.85;color:var(--text-3);overflow-wrap:anywhere}
+
+/* ================= PATENT CARD ================= */
+.pat{margin:1.5rem 0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.25rem 1.3rem;box-shadow:var(--shadow)}
+.pat>.tier{margin-bottom:.85rem}
+.pat-no{display:block;direction:ltr;text-align:left;font-family:var(--mono);font-size:1.02rem;font-weight:700;line-height:1.7;color:var(--brand);overflow-wrap:anywhere}
+.pat-en{display:block;direction:ltr;text-align:left;font-family:var(--mono);font-size:.8rem;line-height:1.85;color:var(--text-3);margin:.25rem 0 .85rem;padding-bottom:.85rem;border-bottom:1px dashed var(--line);overflow-wrap:anywhere}
+.pat-fa{font-size:1.01rem;line-height:2;color:var(--text-2);margin:0}
+.pat-fa b{display:block;color:var(--text);margin-bottom:.3rem;font-weight:700}
+.pat-meta{margin-top:.9rem;display:flex;flex-wrap:wrap;gap:.4rem .55rem}
+.chip{font-family:var(--mono);font-size:.69rem;line-height:1.9;color:var(--text-3);background:var(--surface-2);border:1px solid var(--line-soft);border-radius:6px;padding:.06rem .5rem;direction:ltr;overflow-wrap:anywhere}
+
+/* ================= COMPARE CARDS ================= */
+.two{display:grid;gap:1rem;margin:2.2rem 0}
+@media (min-width:40rem){.two{grid-template-columns:1fr 1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.25rem 1.3rem;box-shadow:var(--shadow)}
+.card.rv{margin:2.1rem 0}
+.card h4{margin:0 0 .3rem;font-size:1.16rem;font-weight:800;line-height:1.6;color:var(--brand-deep)}
+.card .kicker{display:block;font-family:var(--fa);font-weight:700;font-size:.78rem;color:var(--brand-deep);margin-bottom:.5rem}
+.card p{margin:0;font-size:1rem;line-height:2;color:var(--text-2)}
+
+/* ================= WARNING ================= */
+.warn{margin:2.4rem 0;background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:14px;padding:1.25rem 1.3rem 1.05rem}
+.warn h4{margin:0 0 .6rem;font-size:1.08rem;font-weight:800;line-height:1.6;color:var(--warn-text);display:flex;align-items:center;gap:.5rem}
+.warn h4::before{content:"";width:8px;height:8px;border-radius:2px;rotate:45deg;background:var(--warn-dot);flex:none}
+.warn p{margin:0 0 .8rem;font-size:1rem;line-height:2;color:var(--warn-text)}
+.warn p:last-child{margin-bottom:0}
+
+/* ================= FIGURE ================= */
+.fig{margin:3.4rem 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-lift);overflow:hidden}
+.fig-body{padding:1.5rem .9rem 1.2rem}
+.fig-cap{border-top:1px dashed var(--line);background:var(--surface-2);padding:.85rem 1.2rem;font-family:var(--fa);font-size:.86rem;line-height:2;color:var(--text-2);overflow-wrap:anywhere}
+.fig-cap b{font-family:var(--mono);direction:ltr;display:inline-block}
+.fig-cap b{color:var(--brand);font-weight:700}
+.fig svg{display:block;width:100%;height:auto;direction:ltr;unicode-bidi:isolate}
+
+/* ================= TABLE ================= */
+.tbl-title{margin:2.4rem 0 .8rem;font-size:.9rem;color:var(--text-3);display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.tbl-title b{color:var(--brand-deep);font-size:1.02rem}
+.tablewrap{margin:0 0 2.4rem;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{text-align:left;padding:.85rem 1rem;line-height:1.9;border-bottom:1px solid var(--line-soft);vertical-align:top}
+thead th{background:var(--surface-2);color:var(--text);font-weight:700;font-size:.88rem;border-bottom:1px solid var(--line)}
+tbody td{color:var(--text-2)}
+tbody tr:last-child td{border-bottom:0}
+/* real table only where there is genuinely room: break it out of the 42rem column */
+@media (min-width:66rem){
+  .tablewrap{width:56rem;margin-inline:-8.25rem}
+  table{table-layout:fixed}
+  thead th{white-space:nowrap}
+  th:nth-child(1),td:nth-child(1){width:26%}
+  th:nth-child(2),td:nth-child(2){width:26%}
+  th:nth-child(3),td:nth-child(3){width:28%}
+  th:nth-child(4),td:nth-child(4){width:20%}
+}
+/* everything narrower: stacked cards, no horizontal scroll anywhere */
+@media (max-width:65.99rem){
+  .tablewrap{border:0;background:transparent;box-shadow:none;border-radius:0}
+  table,tbody,tr,td{display:block;width:auto}
+  thead{display:none}
+  tbody tr{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:.4rem 1.15rem;margin-bottom:.85rem;box-shadow:var(--shadow)}
+  tbody tr:last-child{margin-bottom:0}
+  tbody td{border-bottom:0;padding:.8rem 0;text-align:left;font-size:1rem}
+  tbody td+td{border-top:1px dashed var(--line-soft)}
+  tbody td::before{content:attr(data-l);display:block;font-size:.77rem;font-weight:700;color:var(--text-3);line-height:1.9;margin-bottom:.15rem}
+}
+
+/* ================= STEPS ================= */
+.steps{margin:2rem 0;padding:0;list-style:none;counter-reset:st}
+.steps li{counter-increment:st;position:relative;padding:0 0 1.1rem 2.5rem;font-size:1.02rem;line-height:2;color:var(--text-2)}
+.steps li::before{content:counter(st);position:absolute;left:0;top:.42em;width:1.7rem;height:1.7rem;border-radius:8px;background:var(--surface-2);border:1px solid var(--line);color:var(--brand-deep);font-family:var(--mono);font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
+.steps li:last-child{padding-bottom:0}
+
+/* ================= LEGEND ================= */
+.legend{margin:2rem 0;padding:0;list-style:none}
+.legend li{display:flex;gap:.9rem;align-items:flex-start;padding:.9rem 0;border-bottom:1px dashed var(--line-soft);font-size:1rem;line-height:2;color:var(--text-2);flex-wrap:wrap}
+.legend li:last-child{border-bottom:0}
+.legend .tier{flex:none;margin-top:.42em}
+.legend span:last-child{flex:1;min-width:12rem}
+
+/* ================= SOURCES ================= */
+.srcbox{margin:2.4rem 0 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.srcgrp{padding:1.2rem 1.3rem;border-bottom:1px dashed var(--line)}
+.srcbox .srcgrp:last-child{border-bottom:0}
+.srcgrp .tier{margin-bottom:.85rem}
+.srcgrp ul{margin:0;padding:0;list-style:none}
+.srcgrp li{margin:0 0 .6rem}
+.srcgrp li:last-child{margin-bottom:0}
+.srcgrp .nm{display:block;font-size:.94rem;line-height:1.9;color:var(--text-2)}
+.srcgrp a{display:block;direction:ltr;text-align:left;font-family:var(--mono);font-size:.74rem;line-height:1.8;color:var(--brand-deep);overflow-wrap:anywhere;text-decoration:none;border-bottom:1px solid transparent}
+.srcgrp a:hover{border-bottom-color:currentColor}
+
+/* ================= INVITE ================= */
+.invite{margin:4rem 0 0;position:relative;overflow:hidden;background:#08131C;color:#EAF3F9;border-radius:20px;padding:2.2rem 1.5rem 2rem;box-shadow:var(--shadow-lift)}
+.invite::before{content:"";position:absolute;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.05) 1px,transparent 1px);background-size:34px 34px;mask-image:radial-gradient(90% 80% at 80% 0%,#000,transparent 72%);-webkit-mask-image:radial-gradient(90% 80% at 80% 0%,#000,transparent 72%)}
+.invite>*{position:relative}
+.invite h3{margin:0 0 .7rem;font-size:1.2rem;line-height:1.7;font-weight:800;color:#fff}
+.invite p{color:#A9C6D8;font-size:1rem;line-height:2;margin:0 0 1.5rem}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.72rem 1.25rem;border-radius:11px;font-weight:700;font-size:.96rem;line-height:1.7;text-decoration:none;border:1px solid transparent}
+.btn-1{background:var(--brand);color:#04121B}
+.btn-1:hover{background:#4FBDF5;color:#04121B}
+.btn-2{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2);color:#EAF3F9}
+.btn-2:hover{background:rgba(255,255,255,.13);color:#fff}
+
+.foot{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--line);font-size:.9rem;line-height:2;color:var(--text-3)}
+.foot a{color:var(--brand-deep);font-weight:700}
+
+/* ================= STICKY CTA ================= */
+#ctaClose{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+.ctabar{position:fixed;z-index:70;inset:auto .7rem .7rem .7rem;background:#08131C;color:#EAF3F9;border:1px solid rgba(255,255,255,.16);border-radius:15px;box-shadow:0 18px 40px -12px rgba(0,0,0,.6);padding:.7rem .8rem .7rem .55rem;display:flex;align-items:center;gap:.7rem;transform:translateY(150%)}
+.ctabar p{margin:0;font-size:.88rem;line-height:1.7;flex:1;min-width:0;color:#C7DDEA}
+.ctabar p b{display:block;color:#fff;font-size:.93rem}
+.ctabar .btn{padding:.5rem .9rem;font-size:.86rem;flex:none}
+.ctabar .x{flex:none;width:30px;height:30px;border-radius:9px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#8FB0C4;background:rgba(255,255,255,.06);font-size:1rem;line-height:1}
+#ctaClose:checked ~ .ctabar{display:none}
+@supports (animation-timeline:scroll()){.ctabar{animation:ctaIn linear both;animation-timeline:scroll(root block);animation-range:22% 27%}}
+@keyframes ctaIn{from{transform:translateY(150%)}to{transform:translateY(0)}}
+@media (min-width:44rem){.ctabar{display:none}}
+
+/* ================= BACK TO TOP ================= */
+.totop{position:fixed;z-index:65;right:1rem;bottom:1rem;width:44px;height:44px;border-radius:12px;
+  background:#08131C;color:#EAF3F9;border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 12px 28px -10px rgba(0,0,0,.5);font-size:1.15rem;line-height:1;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;
+  transform:translateY(12px);transition:opacity .22s ease,transform .22s ease}
+.totop.show{opacity:1;pointer-events:auto;transform:none}
+.totop:hover{background:#111C26}
+@media (max-width:43.99rem){.totop{bottom:5.2rem}}
+@media (prefers-reduced-motion:reduce){.totop{transition:opacity .01s linear}}
+
+/* ================= REVEALS ================= */
+@supports (animation-timeline:view()){
+  .rv{animation:rvIn linear both;animation-timeline:view();animation-range:entry 4% cover 26%}
+  .rule{animation:ruleDraw linear both;animation-timeline:view();animation-range:entry 6% cover 30%}
+}
+@keyframes rvIn{from{opacity:.001;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes ruleDraw{from{transform:scaleX(.04)}to{transform:scaleX(1)}}
+@supports not (animation-timeline:view()){
+  .js-on .rv{opacity:.001;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.7,.3,1)}
+  .js-on .rv.seen{opacity:1;transform:none}
+}
+
+/* ================= FIGURE MOTION ================= */
+@keyframes glowPulse{0%,100%{opacity:.35}50%{opacity:1}}
+.spark{animation:glowPulse 2.4s ease-in-out infinite}
+.wire{stroke-dasharray:6 5;animation:dashMove 1.6s linear infinite}
+@keyframes dashMove{to{stroke-dashoffset:-22}}
+.bar-fill{transform-box:fill-box;transform-origin:right center}
+@supports (animation-timeline:view()){.bar-fill{animation:barGrow linear both;animation-timeline:view();animation-range:entry 10% cover 40%}}
+@keyframes barGrow{from{transform:scaleX(.02)}to{transform:scaleX(1)}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .rv,.rule,.bar-fill,.progress{opacity:1 !important;transform:none !important}
+  .ctabar{transform:none}
+}
+
+/* ================= RESPONSIVE DATA TABLE (.dt) ================= */
+.dt{margin:0 0 2.4rem;border:1px solid var(--line);border-radius:14px;background:var(--surface);
+  box-shadow:var(--shadow);overflow:hidden}
+.dt table{width:100%;border-collapse:collapse;font-family:var(--fa)}
+.dt thead{display:table-header-group}
+.dt th{padding:.75rem .9rem;text-align:left;font-size:.82rem;font-weight:800;
+  color:var(--text-3);background:var(--surface-2);border-bottom:1px solid var(--line)}
+.dt td{padding:.85rem .9rem;text-align:left;font-size:.94rem;line-height:1.95;
+  color:var(--text-2);border-bottom:1px solid var(--line-soft);vertical-align:top}
+.dt tbody tr:last-child td{border-bottom:0}
+.dt .tname{display:block;font-weight:800;color:var(--text);margin:0 0 .15rem}
+.dt .en{font-family:var(--mono);font-size:.78rem;direction:ltr;display:inline-block;
+  color:var(--text-3);unicode-bidi:isolate}
+.dt .yes{display:block;padding-inline-start:1.3rem;position:relative}
+.dt .yes::before{content:"✓";position:absolute;inset-inline-start:0;top:.05em;
+  color:var(--t-official);font-weight:800}
+.dt .no{display:block;padding-inline-start:1.3rem;position:relative;color:var(--text-3)}
+.dt .no::before{content:"✕";position:absolute;inset-inline-start:0;top:.05em;
+  color:var(--t-court);font-weight:800}
+.dt .flag{display:inline-block;font-size:.74rem;font-weight:700;padding:.15rem .55rem;
+  border-radius:5px;white-space:nowrap;background:var(--warn-bg);color:var(--warn-text);
+  border:1px solid var(--warn-line)}
+/* stacked card layout under 640px: each row becomes a labeled card, no horizontal scroll */
+@media(max-width:640px){
+  .dt table,.dt thead,.dt tbody,.dt th,.dt td,.dt tr{display:block}
+  .dt thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .dt tbody tr{border-bottom:1px solid var(--line);padding:.9rem .95rem}
+  .dt tbody tr:last-child{border-bottom:0}
+  .dt td{border-bottom:0;padding:.35rem 0}
+  .dt td::before{content:attr(data-label);display:block;font-family:var(--fa);
+    font-size:.72rem;font-weight:800;color:var(--brand-deep);margin:0 0 .2rem}
+  .dt td:first-child::before{display:none}
+}
+
+/* ================= TOPICAL AUTHORITY ARTICLE COMPONENTS ================= */
+
+/* ---- inline term chip, replaces quotation marks ---- */
+.term{display:inline-block;background:var(--surface-2);border:1px solid var(--line-soft);
+  border-radius:5px;padding:.02em .38em;font-size:.94em;line-height:1.6}
+
+/* ---- doc id + seal + free use ---- */
+.docid{font-family:var(--mono);font-size:.72rem;letter-spacing:.02em;direction:ltr;
+  padding:.1rem .5rem;border:1px solid rgba(158,201,228,.3);border-radius:6px;opacity:.85}
+.seal{margin:3rem 0 1.6rem;padding:1.4rem 1.3rem 1.2rem;border:1px solid var(--line);
+  border-radius:var(--radius);background:var(--surface-2);position:relative;overflow:hidden}
+.seal::before{content:"";position:absolute;inset-inline-end:-70px;top:-70px;width:220px;height:220px;
+  border-radius:50%;background:radial-gradient(circle,rgba(29,164,235,.13),transparent 68%);pointer-events:none}
+.seal>*{position:relative}
+.seal h3{margin:0 0 .3rem;font-size:1.06rem;font-weight:800;color:var(--brand-deep)}
+.seal .legend{margin:.4rem 0 1rem}
+.seal .legend li{padding:.7rem 0;font-size:.96rem}
+.seal-rule{margin:0 0 1rem;font-size:.97rem;line-height:2;color:var(--text-2);
+  padding-inline-start:.9rem;border-inline-start:3px solid var(--brand)}
+.seal-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.freeuse{margin:0 0 2.4rem;border-inline-start:3px solid var(--t-official)}
+.freeuse h4{color:var(--t-official)}
+.card h4 a{color:inherit;text-decoration:none}
+.card h4 a:hover{color:var(--brand-deep);text-decoration:underline}
+
+/* ---- tables ---- */
+.tablewrap table{width:100%;border-collapse:collapse;font-size:.93rem}
+.tablewrap th,.tablewrap td{padding:.72rem .8rem;text-align:left;
+  border-bottom:1px solid var(--line-soft);line-height:1.95;vertical-align:top}
+.tablewrap thead th{font-size:.8rem;font-weight:800;color:var(--text-3);background:var(--surface-2)}
+.tablewrap tbody tr:last-child td{border-bottom:0}
+.tablewrap .en{font-family:var(--mono);font-size:.82rem;direction:ltr;display:inline-block}
+.flag{display:inline-block;font-size:.74rem;font-weight:700;padding:.1rem .45rem;border-radius:5px;
+  white-space:nowrap;background:var(--warn-bg);color:var(--warn-text);border:1px solid var(--warn-line)}
+@media(max-width:600px){.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .tablewrap table{min-width:34rem}}
+
+/* ---- FIG 1: two tracks ---- */
+.track{display:grid;gap:.9rem}
+@media(min-width:560px){.track{grid-template-columns:1fr 1fr}}
+.trk{border:1px solid var(--line);border-radius:13px;padding:.95rem .9rem 1.1rem;background:var(--surface)}
+.trk.sem{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand) inset}
+.trk h5{margin:0 0 .2rem;font-size:.98rem;font-weight:800;color:var(--text)}
+.trk .sub{margin:0 0 .85rem;font-size:.82rem;line-height:1.8;color:var(--text-3)}
+.trk ol{list-style:none;margin:0;padding:0;counter-reset:tstep}
+.trk li{counter-increment:tstep;position:relative;padding:.55rem .75rem;margin:0 0 .45rem;
+  font-size:.92rem;line-height:1.8;color:var(--text-2);
+  background:var(--surface-2);border:1px solid var(--line-soft);border-radius:9px}
+.trk li:last-child{margin:0;background:var(--brand);border-color:var(--brand);color:#04121B;font-weight:700}
+.trk li::before{content:counter(tstep);position:absolute;inset-inline-start:-1px;top:-1px;
+  font-family:var(--mono);font-size:.6rem;opacity:.45;padding:.15rem .3rem}
+.trk .flow{display:block;height:14px;margin:-.15rem 0;position:relative}
+.trk .flow::before{content:"";position:absolute;inset-inline-end:1.1rem;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,var(--line-soft),var(--brand))}
+.js-on .trk.sem .flow::after{content:"";position:absolute;inset-inline-end:.95rem;top:0;
+  width:5px;height:5px;border-radius:50%;background:var(--brand);
+  animation:trkFlow 2.4s cubic-bezier(.5,0,.5,1) infinite}
+@keyframes trkFlow{0%{transform:translateY(-2px);opacity:0}
+  25%{opacity:1}75%{opacity:1}100%{transform:translateY(14px);opacity:0}}
+
+/* ---- FIG 2: quadrant ---- */
+.quad{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;position:relative;
+  padding:0 1.7rem 1.9rem 1.9rem}
+.qc{border:1px solid var(--line);border-radius:12px;padding:.9rem .85rem;background:var(--surface);
+  min-height:6.4rem;display:flex;flex-direction:column;justify-content:center}
+.qc b{display:block;font-size:.95rem;font-weight:800;line-height:1.7;color:var(--text);margin:0 0 .3rem}
+.qc span{font-size:.83rem;line-height:1.8;color:var(--text-3)}
+.qc.win{background:var(--brand);border-color:var(--brand)}
+.qc.win b{color:#04121B}
+.qc.win span{color:rgba(4,18,27,.7)}
+.qc.bad{background:var(--warn-bg);border-color:var(--warn-line)}
+.qc.bad b{color:var(--warn-text)}
+.js-on .qc.win{animation:qPulse 3.4s ease-in-out infinite}
+@keyframes qPulse{0%,100%{box-shadow:0 0 0 0 rgba(29,164,235,0)}
+  50%{box-shadow:0 0 0 5px rgba(29,164,235,.18)}}
+.qax{position:absolute;font-family:var(--fa);font-weight:700;font-size:.74rem;color:var(--text-3)}
+.qax.x{bottom:.35rem;inset-inline-start:1.9rem;inset-inline-end:0;text-align:center}
+.qax.y{inset-inline-start:.25rem;top:0;bottom:1.9rem;writing-mode:vertical-rl;
+  display:flex;align-items:center;justify-content:center;transform:rotate(180deg)}
+
+/* ---- FIG 3: orbit states ---- */
+.orbits{display:grid;gap:.8rem;grid-template-columns:1fr 1fr}
+@media(min-width:640px){.orbits{grid-template-columns:repeat(4,1fr)}}
+.orb{border:1px solid var(--line);border-radius:12px;padding:.7rem .6rem .8rem;background:var(--surface)}
+.orb h5{margin:0 0 .5rem;font-size:.86rem;font-weight:800;color:var(--text);text-align:center;line-height:1.6}
+.orb svg{display:block;width:100%;height:auto}
+.orb .note{margin:.5rem 0 0;font-size:.76rem;line-height:1.75;color:var(--text-3)}
+.js-on .orb .core{animation:orbPulse 3.6s ease-in-out infinite}
+@keyframes orbPulse{0%,100%{opacity:.55;r:11}50%{opacity:1;r:13}}
+.js-on .orb .ring{transform-origin:100px 100px;animation:orbSpin 34s linear infinite}
+@keyframes orbSpin{to{transform:rotate(360deg)}}
+
+/* ---- FIG 5: decision tree ---- */
+.tree{display:flex;flex-direction:column;gap:0}
+.tq{border:1px solid var(--line);border-radius:12px;background:var(--surface);
+  padding:.85rem 1rem;font-size:.97rem;line-height:1.85;font-weight:700;color:var(--text);
+  transition:border-color .2s ease,box-shadow .2s ease}
+.tbranch{display:flex;align-items:stretch;gap:.7rem;padding:.5rem 0 .5rem 0;position:relative}
+.tbranch.tno-row::before{content:"";position:absolute;inset-inline-end:1.4rem;top:0;bottom:0;width:1px;
+  background:var(--line)}
+.tyes{flex:1;display:flex;align-items:center;gap:.6rem;margin-inline-start:0}
+.tarrow{flex:none;width:2.6rem;height:1px;background:var(--line);position:relative;margin-inline-end:.15rem;
+  transition:background .2s ease}
+.tarrow::after{content:"";position:absolute;inset-inline-start:0;top:-3px;
+  border:3.5px solid transparent;border-inline-end-color:var(--line);transition:border-inline-end-color .2s ease}
+.tout{flex:1;border-radius:10px;padding:.7rem .85rem;font-size:.9rem;line-height:1.8;
+  transition:box-shadow .2s ease,transform .2s ease}
+.tout.keep{background:var(--brand);color:#04121B;font-weight:700}
+.tout.hold{background:var(--surface);border:1px solid var(--brand);color:var(--text)}
+.tout.noindex{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-text)}
+.tout.merge{background:var(--surface);border:1px solid var(--t-official);color:var(--text)}
+.tout.del{background:var(--t-court);color:#fff;font-weight:700;text-align:center}
+.tlbl{flex:none;font-family:var(--mono);font-size:.7rem;font-weight:700;
+  padding:.12rem .42rem;border-radius:5px;align-self:center;transition:box-shadow .2s ease}
+.tlbl.y{background:var(--brand);color:#04121B}
+.tlbl.n{background:var(--surface-2);color:var(--text-3);border:1px solid var(--line-soft)}
+.tno{display:flex;align-items:center;gap:.5rem;padding:.15rem 0 .15rem 0}
+.tno .bar{flex:none;width:2.8rem;height:1px;background:transparent}
+.tfinal{margin-top:.5rem}
+@media(max-width:520px){.tarrow{width:1.2rem}.tno .bar{width:1.4rem}}
+
+/* FIG.5 persistent relationship highlighting */
+.tstage{border-radius:14px;cursor:pointer;transition:background .2s ease,opacity .2s ease;
+  -webkit-tap-highlight-color:transparent}
+.tstage:focus{outline:none}
+.tstage:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:14px}
+.tstage.active{background:var(--surface-2)}
+.tstage.active .tq{border-color:var(--brand);box-shadow:0 0 0 2px rgba(29,164,235,.16)}
+.tstage.active .tlbl.y{box-shadow:0 0 0 3px rgba(29,164,235,.3)}
+.tstage.active .tarrow{background:var(--brand)}
+.tstage.active .tarrow::after{border-inline-end-color:var(--brand)}
+.tstage.active .tout:not(.del){box-shadow:0 0 0 2px rgba(29,164,235,.28);transform:translateY(-1px)}
+.tstage.active .tlbl.n{box-shadow:0 0 0 2px var(--line)}
+.tstage.active .tout.del{box-shadow:0 0 0 3px rgba(194,51,77,.4)}
+.tree.has-active .tstage:not(.active):not(.next-hint){opacity:.5}
+.tree.has-active .tstage.next-hint{opacity:.85}
+.tree.has-active .tstage.next-hint>.tq{border-color:var(--brand);box-shadow:0 0 0 1px rgba(29,164,235,.12)}
+
+/* ---- code block ---- */
+.codebox{margin:1.6rem 0;border:1px solid var(--line);border-radius:13px;overflow:hidden;
+  background:var(--surface)}
+.codebox .chead{display:flex;align-items:center;gap:.55rem;padding:.6rem .9rem;
+  background:var(--surface-2);border-bottom:1px solid var(--line-soft)}
+.codebox .chead b{font-size:.82rem;font-weight:800;color:var(--text-2)}
+.codebox .chead .lang{font-family:var(--mono);font-size:.7rem;color:var(--brand-deep);
+  margin-inline-start:auto;direction:ltr;background:var(--surface);
+  border:1px solid var(--line);border-radius:5px;padding:.06rem .42rem}
+.codebox pre{margin:0;padding:1rem;overflow-x:auto;direction:ltr;text-align:left;
+  font-family:var(--mono);font-size:.79rem;line-height:1.85;color:var(--text-2);
+  -webkit-overflow-scrolling:touch;tab-size:2}
+.codebox code{font:inherit;color:inherit;background:none;padding:0;border:0}
+
+/* ---- myth list ---- */
+.myths{margin:1.4rem 0 0;padding:0;list-style:none;counter-reset:myth}
+.myths li{counter-increment:myth;position:relative;margin:0 0 .75rem;padding:.95rem 1rem .95rem 1rem;
+  border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.myths li b{display:block;font-size:.98rem;font-weight:800;line-height:1.85;color:var(--t-court);
+  margin:0 0 .35rem;padding-inline-start:1.9rem;position:relative}
+.myths li b::before{content:"✕";position:absolute;inset-inline-start:0;top:0;
+  width:1.35rem;height:1.35rem;border-radius:5px;font-size:.72rem;font-weight:700;
+  display:grid;place-items:center;background:var(--warn-bg);color:var(--t-court);
+  border:1px solid var(--warn-line)}
+.myths li p{margin:0;font-size:.96rem;line-height:2;color:var(--text-2)}
+
+/* ---- checklist ---- */
+.check{margin:1.2rem 0 0;padding:0;list-style:none}
+.check li{position:relative;padding:.6rem 0 .6rem 2rem;font-size:.98rem;line-height:1.95;
+  color:var(--text-2);border-bottom:1px solid var(--line-soft)}
+.check li:last-child{border-bottom:0}
+.check li::before{content:"";position:absolute;inset-inline-start:0;top:1.05rem;
+  width:1.05rem;height:1.05rem;border-radius:4px;border:1.5px solid var(--brand);
+  background:var(--surface)}
+
+/* ---- cadence ---- */
+.cadence{display:grid;gap:.7rem;margin:1.3rem 0 0}
+@media(min-width:560px){.cadence{grid-template-columns:repeat(3,1fr)}}
+.cad{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:.9rem .85rem}
+.cad .when{display:inline-block;font-family:var(--mono);font-size:.7rem;font-weight:700;
+  color:var(--brand-deep);background:var(--surface-2);border:1px solid var(--line-soft);
+  border-radius:999px;padding:.1rem .55rem;margin:0 0 .55rem}
+.cad p{margin:0;font-size:.9rem;line-height:1.9;color:var(--text-2)}
+
+/* ---- bar animation fallback ---- */
+@supports not (animation-timeline:view()){
+  .js-on .bar-fill{transform:scaleX(.02);transition:transform .9s cubic-bezier(.2,.7,.3,1)}
+  .js-on .bar-fill.grew{transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .js-on .bar-fill{transform:none !important}
+  .js-on .trk.sem .flow::after,.js-on .qc.win,.js-on .orb .core,.js-on .orb .ring{animation:none}
+}
+
+/* ===== THEME PAINT FIX =====
+   body background alone can leave the UA canvas painted from the OS scheme.
+   Paint html too and switch color-scheme so the canvas follows data-theme. */
+html{background:var(--paper)}
+:root{color-scheme:light}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark}}
+:root[data-theme="light"]{color-scheme:light}
+:root[data-theme="dark"]{color-scheme:dark}
+html,body{transition:background-color .28s ease,color .28s ease}
+@media (prefers-reduced-motion:reduce){html,body{transition:none}}
+
+.fig-cap b{margin-inline-end:.5rem}
+.tier.t-coined{background:var(--surface-2);color:var(--text-3);border-color:var(--line)}
+
+/* ---- FIG 4: publication panels ---- */
+.panels{display:grid;gap:.9rem}
+@media(min-width:600px){.panels{grid-template-columns:1fr 1fr}}
+.pan{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:.8rem .7rem .7rem}
+.pan.risk{border-color:var(--warn-line)}
+.pan h5{margin:0 0 .5rem;font-size:.88rem;font-weight:800;color:var(--text);text-align:center}
+.pan.risk h5{color:var(--warn-text)}
+.pan svg{display:block;width:100%;height:auto}
+.pan .pnote{margin:.4rem 0 0;font-size:.76rem;line-height:1.7;color:var(--text-3);text-align:center}
+.plegend{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;margin:.85rem 0 0;
+  font-size:.78rem;color:var(--text-3)}
+.plegend span{display:inline-flex;align-items:center;gap:.4rem}
+.sw{display:inline-block;width:.7rem;height:.7rem;border-radius:3px}
+.sw.g{background:var(--text-3);opacity:.4}
+.sw.b{background:var(--brand)}
+.bar-up{transform-origin:center bottom}
+@supports (animation-timeline:view()){
+  .bar-up{animation:barUp linear both;animation-timeline:view();animation-range:entry 12% cover 34%}
+}
+@keyframes barUp{from{transform:scaleY(.03)}to{transform:none}}
+@supports not (animation-timeline:view()){
+  .js-on .bar-up{transform:scaleY(.03);transition:transform .95s cubic-bezier(.2,.7,.3,1)}
+  .js-on .bar-up.grew{transform:none}
+}
+@media (prefers-reduced-motion:reduce){.bar-up,.js-on .bar-up{transform:none !important;animation:none}}
+
+</style>
+</head>
+<body>
+
+<div class="progress" id="prog"></div>
+
+<header class="masthead">
+  <button class="themebtn" id="themebtn" type="button" aria-label="Toggle light and dark theme">◐</button>
+  <div class="mast-inner">
+    <span class="eyebrow"><i></i>Document-based research</span>
+    <h1>What Is Topical Authority?</h1>
+    <p class="deck">What the documents say, and what the industry built on top of them. A document-based analysis grounded in patents, DOJ court documents, and leaked internal documentation fields, with a measurement method and an execution framework.</p>
+    <div class="byline">
+      <span>By <a href="https://shahramseo.com/" rel="author">Shahram Rahbari</a></span>
+      <span class="sep">|</span>
+      <span class="docid">SR-DOC 2026-08-09 / TOPA-01</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="lede rv">No official Google document has ever stated that something called a Topical Authority score exists. The term is an SEO-industry invention. But the mechanisms it points toward show up, in citable form, across patents, DOJ court documents, and fields inside Google's leaked internal documentation. The entire value of this article rests on that distinction. Wherever something is documented, I bring the document. Wherever something is interpretation, I write interpretation. Wherever something isn't known, I write that it isn't known.</p>
+
+  <div class="tldr rv">
+    <h2>If you're short on time, read just this</h2>
+    <ul>
+      <li>There's no single score called Topical Authority. Several separate fields exist, each measuring a different dimension of the concept.</li>
+      <li>Topical Focus isn't a moral good. It's my hypothesis for an engineering solution to the Cold Start problem, when the system has no behavioral data yet about a new page.</li>
+      <li>Ranking involves at least two separate dimensions: source Quality, which is comparatively query-independent, and Relevance, which gets recalculated for every search. Most projects work on the wrong one.</li>
+      <li>In this article's model, a site's topical center is computed from the average of its own content. That means adding tangential content can push core pages further from center without a single word on them changing.</li>
+      <li>Publishing Velocity and the rate of producing quality-passing pages appear to be tracked separately. The ratio between them is worth watching as its own signal.</li>
+      <li>None of these fields are visible from outside Google. What this article builds is a homemade proxy, useful for its trend, not its absolute value.</li>
+    </ul>
+  </div>
+
+
+  <p class="tbl-title rv"><b>Where each term stands, before we start</b><span>What's documented and what the industry built</span></p>
+  <div class="dt rv">
+    <table>
+      <thead><tr><th>Term</th><th>Status</th><th>What backs it</th></tr></thead>
+      <tbody>
+        <tr>
+          <td data-label="Term"><b class="tname">Topical Authority</b></td>
+          <td data-label="Status"><span class="tier t-coined">Industry-coined</span></td>
+          <td data-label="What backs it">No single score by this name is documented anywhere. What exists is several separate mechanisms</td>
+        </tr>
+        <tr>
+          <td data-label="Term"><b class="tname">Topical Focus</b><span class="en">siteFocusScore</span></td>
+          <td data-label="Status"><span class="tier t-leak">Leaked field</span></td>
+          <td data-label="What backs it">Its name and a short description exist in the internal documentation. Its weight and stage of use don't</td>
+        </tr>
+        <tr>
+          <td data-label="Term"><b class="tname">Topical Radius</b><span class="en">siteRadius</span></td>
+          <td data-label="Status"><span class="tier t-leak">Leaked field</span></td>
+          <td data-label="What backs it">Same status. Its name suggests it quantifies a page's distance from a site's center</td>
+        </tr>
+        <tr>
+          <td data-label="Term"><b class="tname">Topical Coverage</b></td>
+          <td data-label="Status"><span class="tier t-patent">Patent-grounded</span></td>
+          <td data-label="What backs it">The Phrase-based Indexing family and the Query Variants family point toward its mechanism</td>
+        </tr>
+        <tr>
+          <td data-label="Term"><b class="tname">Coverage Authority</b></td>
+          <td data-label="Status"><span class="tier t-coined">Industry-coined</span></td>
+          <td data-label="What backs it">Not even a solid secondary source backs this name. But the mechanism it points to is real</td>
+        </tr>
+        <tr>
+          <td data-label="Term"><b class="tname">Topical Coherence</b></td>
+          <td data-label="Status"><span class="tier t-study">Analyst correction</span></td>
+          <td data-label="What backs it">A conceptual proposal from independent analysts, not a Google document. Covered in the first section</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="rv">This table is the backbone of the entire article. Wherever a term from the industry-coined rows gets used, its underlying mechanism gets introduced separately, with its own documentation.</p>
+
+  <details class="toc rv">
+    <summary><span>Table of contents</span><b>16</b></summary>
+    <ol>
+      <li><a href="#s1">Definition and Origin</a></li>
+      <li><a href="#s2">Why This Mechanism Was Built in the First Place</a></li>
+      <li><a href="#s3">Basics: Topicality vs. Quality</a></li>
+      <li><a href="#s4">Topic Models: From Word Counting to Vectors</a></li>
+      <li><a href="#s5">Patents, Layer by Layer</a></li>
+      <li><a href="#s6">Topic-Related Fields in the Leaked Documentation</a></li>
+      <li><a href="#s7">Topical Focus and Quality Are Two Different Things</a></li>
+      <li><a href="#s8">Coverage, Defined and Bounded</a></li>
+      <li><a href="#s9">Topical Focus and Site Structure</a></li>
+      <li><a href="#s10">Information Architecture and Implementation</a></li>
+      <li><a href="#s11">Author and Source</a></li>
+      <li><a href="#s12">Measurement</a></li>
+      <li><a href="#s13">Myths and Common Mistakes</a></li>
+      <li><a href="#s14">Execution Framework</a></li>
+      <li><a href="#s15">The Limits of This Article</a></li>
+      <li><a href="#s16">References</a></li>
+    </ol>
+  </details>
+
+  <p class="rv">This article is written for someone who wants to know what's actually underneath this term, not someone looking for a ten-step checklist. It's long because the subject is long.</p>
+
+  <!-- ============ 1 ============ -->
+  <section class="sec" id="s1">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>Definition and Origin</h2></div>
+
+    <h3 class="rv">Where the term came from</h3>
+    <p class="rv">Before it caught on in SEO, this exact phrase already existed in academic literature, in a different context entirely: citation ranking and author credibility, not search rankings.</p>
+    <p class="rv">One relevant paper is "Joint Modeling of Topics, Citations, and Topical Authority in Academic Corpora," by Jooyeon Kim, Dongwoo Kim, and Alice Oh, published in Transactions of the Association for Computational Linguistics, Volume 5, 2017. It uses the same phrase, but for ranking author credibility within an academic subject, not for ranking anything in Google.</p>
+    <p class="rv">That usage comes out of citation graphs and stays entirely inside academic research. It has no connection to Google rankings or SEO.</p>
+    <p class="rv">In classical Information Retrieval literature on web ranking, the relevant concepts were things like Topical Relevance and document clustering, not Topical Authority in the sense used today.</p>
+
+    <div class="warn rv">
+      <h4>A basic distinction</h4>
+      <p>The definition offered in that framework is a working definition. Its author chose to attach this name to this particular combination of concepts. No Google document produced that definition, and no field or patent maps to it directly.</p>
+      <p>There's nothing wrong with a working definition. Plenty of science runs on them. The problem starts when a definition gets mistaken for a finding. At that point it becomes unfalsifiable, because any failure can be explained away as poor execution.</p>
+    </div>
+
+    <p class="rv">From here on, every claim in this article either has a primary source or is explicitly marked as interpretation.</p>
+
+    <h3 class="rv">Authority in Information Retrieval vs. Authority in SEO</h3>
+    <p class="rv">In Information Retrieval literature, authority has a fairly precise meaning, tied to graph structure. Algorithms like PageRank and HITS derive authority from link patterns, not from the text itself. HITS even defines two separate roles explicitly: hub pages and authority pages.</p>
+    <p class="rv">In SEO writing, the same word gradually picked up a different meaning, closer to topical expertise. That shift happened without anyone announcing it, and it's the source of a lot of today's confusion.</p>
+    <p class="rv">The practical consequence matters. When someone says a site has authority in a topic, they could mean two very different things: other sites in that space link to it, or the site's content is tightly organized around a single semantic core. The first is something others give you. The second is something you build yourself.</p>
+
+    <h3 class="rv">Google's official position</h3>
+    <p class="rv">Google's rejection of "Topical Authority" as a named system or concept doesn't, by itself, tell us whether separate mechanisms relevant to topical focus exist. It only tells us Google hasn't packaged anything under that name officially. The sections that follow investigate those mechanisms independently.</p>
+
+    <h3 class="rv">Why no single score doesn't mean no mechanism</h3>
+    <p class="rv">A simple comparison makes this clearer. A car doesn't have a component called a "safety score." It has brakes, airbags, a body structure. But saying the car is safe isn't a meaningless statement. You're just naming an emergent property with a single word.</p>
+    <p class="rv">Topical Authority, in its modern SEO sense, works the same way. The same phrase existed earlier in academic literature, and SEO later adopted and popularized it with a different meaning. This article doesn't claim the SEO usage descended directly from that academic framework, only that the phrase itself predates it. The rest of this article looks at several separate Google mechanisms that may be relevant to parts of what SEOs discuss under that label. That's not a claim that Google designed those mechanisms together, that they form one documented architecture, or that Google refers to their combined effect as Topical Authority internally.</p>
+
+    <h3 class="rv">Topical Authority vs. Topical Coherence</h3>
+    <p class="rv">This distinction was raised by Carolyn Holzman and adopted by Shaun Anderson in his writing. In my view, it's the most important conceptual correction in this space in recent years.</p>
+    <p class="rv">The logic is simple. Authority is granted to you. You can't decide to be authoritative. Topical coherence, on the other hand, is a design choice. You decide what your site is about and what it isn't, then you build the structure so that decision is legible.</p>
+
+    <div class="card rv">
+      <span class="kicker">Why this distinction is practical</span>
+      <h4>A standard vs. a wish</h4>
+      <p>If your goal is to build authority, you'll never know when you're done. If your goal is to build topical coherence, you have a standard, and you can measure against it. That's exactly what the measurement section of this article does.</p>
+    </div>
+
+    <h3 class="rv">How this article uses the term</h3>
+    <p class="rv">From here forward, whenever I write topical focus, I mean how closely a site's content clusters around a single semantic center. Content vectorization is how this article models and approximates that idea, not a confirmed Google formula for computing it.</p>
+    <p class="rv">Whenever I write topical coverage, I mean how completely a site's content addresses the space of possible questions within a topic.</p>
+    <p class="rv">The two are independent, and later on we'll see them come into direct conflict.</p>
+  </section>
+
+  <div class="divider"><span></span></div>
+
+  <!-- ============ 2 ============ -->
+  <section class="sec" id="s2">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>Why This Mechanism Was Built in the First Place</h2></div>
+    <p class="rv">This topic is often explained from the middle. The discussion jumps straight from the idea that Google can infer topical focus to practical recommendations, without first asking what problem those mechanisms might be solving.</p>
+
+    <h3 class="rv">The earlier state of things</h3>
+    <p class="rv">In the DOJ's antitrust case against Google, a set of internal presentations became public. One of them is from Eric Lehman, a senior search engineer.</p>
+    <p class="rv">What that presentation describes is striking, for anyone who's spent years reading about how Google understands language. Lehman states plainly that the system doesn't understand documents, it simulates that understanding. Instead of reading a document, Google records and retains how humans react to it.</p>
+    <p class="rv">The logic was straightforward: if user reactions to a document are positive, the document is probably good. If negative, probably bad.</p>
+
+    <figure class="fig rv">
+      <div class="fig-body">
+        <div class="track">
+          <div class="trk">
+            <h5>Behavioral Path</h5>
+            <p class="sub">Requires user data</p>
+            <ol>
+              <li>Document gets shown</li>
+              <span class="flow"></span>
+              <li>User reacts</li>
+              <span class="flow"></span>
+              <li>Relevance gets estimated</li>
+            </ol>
+          </div>
+          <div class="trk sem">
+            <h5>Semantic Path</h5>
+            <p class="sub">Available from the moment of indexing</p>
+            <ol>
+              <li>Document gets indexed</li>
+              <span class="flow"></span>
+              <li>Gets converted to a vector</li>
+              <span class="flow"></span>
+              <li>Relevance gets estimated</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <figcaption class="fig-cap"><b>FIG. 1</b> The Behavioral Path has a documented Cold Start limitation for new documents, per that same presentation. My hypothesis is that site-level semantic representations could offer the system something to go on before behavioral history exists, not that a confirmed layer measuring topical focus sits anywhere in Google's architecture.</figcaption>
+    </figure>
+
+    <h3 class="rv">The Cold Start problem</h3>
+    <p class="rv">That same presentation acknowledges the weakness in this architecture. When a document is new, recently changed, or hasn't been shown much yet, there's no behavioral data. The system is effectively blind.</p>
+    <p class="rv">This is what's called Cold Start in machine learning. A system that depends entirely on feedback has nothing to go on for new input.</p>
+    <p class="rv">For Google this wasn't just a technical footnote. Millions of new pages get published every day. A system that can't judge a page until behavioral data starts coming in is, in practice, missing a huge part of the web.</p>
+
+    <h3 class="rv">My hypothesis: a semantic layer</h3>
+    <p class="rv">Up to this point, what's documented in Lehman's presentation is a description of the problem, not a solution. The document itself says nothing about how Google actually solved it.</p>
+    <p class="rv">From here, this is my interpretation. For the system to make a judgment about a document before any clicks exist, it needs to move from raw text to some numeric representation that's comparable across documents. If a new page has no history of its own, is there anything else that does? My hypothesis is that the answer is the site.</p>
+    <p class="rv">If the system knows what a domain has published in the past, and what happened to that content, it can build an initial estimate for a new page. This assumption needs to be weighed against the site-level fields in the leaked documentation, which the following sections cover.</p>
+
+    <div class="card rv">
+      <span class="kicker">The hypothesis this whole article is built on</span>
+      <h4>Topical Focus as my guess at an engineering solution</h4>
+      <p>I don't treat Topical Focus as a moral good. My working assumption is that it's a solution to Cold Start. The logic: a focused site helps the system make a better guess about a new page, because the site's existing track record gives it a starting point. A scattered site doesn't offer that same help. If this assumption holds, a lot of the recommendations later in this article are consistent with it. They're aimed at making the system's initial estimate easier, not at guaranteeing any particular ranking outcome. But I want to be clear this is still a hypothesis. Later sections weigh it against more documented evidence.</p>
+    </div>
+
+    <div class="warn rv">
+      <h4>A caution about these documents</h4>
+      <p>The documents cited here are from 2016 and 2017. That means they describe a historical state, not today's reality. Anyone who concludes from these documents that Google still doesn't read text today would be badly wrong.</p>
+      <p>What they do show, as documented history, is where Google started. Why it moved toward anything resembling a semantic layer, and what role that plays today, is my interpretation, not something these documents establish on their own. The path after that needs to be read from later sources.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span></span></div>
+
+  <!-- ============ 3 ============ -->
+  <section class="sec" id="s3">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>Basics: Topicality vs. Quality</h2></div>
+
+    <h3 class="rv">Two separate dimensions in ranking</h3>
+    <p class="rv">Court testimony and case documents let us draw out a useful distinction. Rather than treating Google's ranking as a single equation, it helps to separate out two analytically distinct dimensions, each answering a different question. This is exactly the distinction this section wants to draw out.</p>
+    <p class="rv">The first question is whether this source can be trusted. That's the Quality/Trust dimension, and it behaves as comparatively independent of Query. For a given site, the answer tends to hold fairly steady across different searches, rather than being recalculated from scratch each time.</p>
+    <p class="rv">The second question is whether this document is relevant to this specific query, that's the Relevance dimension. It's entirely query-dependent and gets recalculated for every search.</p>
+
+    <figure class="fig rv">
+      <div class="fig-body">
+        <div class="quad">
+          <div class="qc">
+            <b>Generally trusted site</b>
+            <span>Nothing to say for this particular query</span>
+          </div>
+          <div class="qc win">
+            <b>Trusted and relevant source</b>
+            <span>The target</span>
+          </div>
+          <div class="qc bad">
+            <b>Neither trusted nor relevant</b>
+            <span>Neither dimension scores</span>
+          </div>
+          <div class="qc">
+            <b>Exactly on topic</b>
+            <span>But not recognized as a reliable source</span>
+          </div>
+          <span class="qax x">Query Relevance, query-dependent</span>
+          <span class="qax y">Source Quality / Trust, query-independent</span>
+        </div>
+      </div>
+      <figcaption class="fig-cap"><b>FIG. 2</b> Four conceptual states across two dimensions. The model is meant to help you locate which dimension a ranking problem is likely sitting on, not to describe a documented Google scoring formula.</figcaption>
+    </figure>
+
+    <p class="rv">Say your traffic drops. If you don't know which dimension the problem sits on, you'll spend six months working on the wrong thing.</p>
+    <p class="rv">If the problem is on the Quality dimension, producing more topically focused content won't help. If the problem is on the Relevance dimension, working on trust and transparency won't fix it either.</p>
+
+    <div class="card rv">
+      <span class="kicker">Quick diagnostic test</span>
+      <h4>Look at the drop by query</h4>
+      <p>In practice, I use this as a diagnostic clue, not something established by the court documents themselves. If the drop is roughly uniform across queries, including branded ones, that points toward the Quality/Trust dimension. If the drop is concentrated in one topical cluster while other topics stay untouched, that points toward the Relevance dimension. My interpretation is that this pattern usually also points to weak topical focus, because that weakness tends to show up exactly there, but the two dimensions are, by definition, separate and not the same thing. This test isn't conclusive, it's a starting point for investigation, not a diagnosis.</p>
+    </div>
+
+    <h3 class="rv">Court documents and testimony</h3>
+    <p class="rv">What's described here isn't analyst speculation. The source is the DOJ's antitrust case against Google, case number <span class="en">1:20-cv-03010-APM</span> in the District of Columbia.</p>
+    <p class="rv">Two kinds of documents entered the public record during that case. One is Exhibits, internal presentations and documents that were created for internal use and later unsealed. The other is sworn testimony from executives and senior search engineers, given under oath. What makes these sources valuable is that, unlike interviews or blog posts, the testimony was given under oath and the internal documents were written for internal use, not public relations.</p>
+    <p class="rv">These same documents also reference a third dimension, related to popularity and the breadth of references, tied more to the link graph and browser usage data. It's mentioned here for completeness. It isn't the subject of this article.</p>
+
+    <div class="warn rv">
+      <h4>A limitation of these sources</h4>
+      <p>The documents in this case span 2014 to 2020. None of them describe today's state.</p>
+      <p>The right way to use them is this: they show the logic the architecture was built on, and what distinctions existed in the minds of the people who built it. The wrong way is to conclude that the exact same thing is running today.</p>
+    </div>
+
+    <h3 class="rv">Anchor, Body, and User Interaction signals</h3>
+    <p class="rv">In a presentation titled "Life of a Click" (May 15, 2017), another document from the same case, the basic ranking structure is split into three columns. The first is the document's Body, what the document says about itself: text, title, headings. The second is Anchors, what the rest of the web says about that document. The third is User Interactions, what users say about the document through their behavior.</p>
+
+    <div class="card rv">
+      <span class="kicker">Where topic sits among the three</span>
+      <h4>When the first two columns don't agree</h4>
+      <p>Topic has a direct presence in the first two columns. Body states directly what a page is about, because the page wrote that itself. Anchors are a more indirect signal, they show what the rest of the web said about the page when linking to it. When the two don't agree, that produces a conflicting signal. A page that describes itself as being about <span class="term">coding tutorials</span>, but whose inbound anchors are mostly about <span class="term">buying a laptop</span>, is a problem for the system, not an opportunity. The third column, User Interactions, doesn't determine the topic on its own, in the model I use here, it confirms or contradicts the estimate already built from Body and Anchors. I don't mean Google formally defines it this way, but as a working model, user behavior functions more like a judge than a witness.</p>
+    </div>
+
+    <h3 class="rv">The query lifecycle, and where topic enters it</h3>
+    <p class="rv">When a user enters a query, several stages happen before results appear.</p>
+    <ol class="steps rv">
+      <li>The query gets interpreted, and sometimes rewritten or split into sub-queries.</li>
+      <li>Out of billions of documents, a set of candidates gets pulled (Candidate Generation). This stage has to be fast, so it runs on cheap signals.</li>
+      <li>Candidates get scored (Ranking). This is where more expensive, precise signals come in.</li>
+      <li>Re-ranking layers get applied, things like freshness or historical user behavior.</li>
+      <li>Filters like result diversity run, so one domain doesn't take over the page.</li>
+    </ol>
+    <p class="rv">For this article, the useful hypothesis is that topical relevance can matter at more than one stage of this process, once at Candidate Generation, where it may help you get considered at all, and again at Ranking, where it may affect where you place. I want to be clear this is an interpretation layered on top of the documented stages, not a documented two-point pipeline for how topic specifically enters the system.</p>
+
+    <h3 class="rv">Retrieval vs. Ranking</h3>
+    <p class="rv">This is a useful practical distinction to take from this section. Retrieval is the stage where the system decides whether you enter the competition at all. Ranking is the stage where it decides how you place in that competition.</p>
+
+    <div class="warn rv">
+      <h4>Why this matters to you</h4>
+      <p>A lot of on-page SEO work is aimed at the Ranking stage. If your problem sits at Retrieval instead, that kind of work may not help, though I wouldn't rule it out entirely without checking further.</p>
+      <p>Here's a diagnostic clue, not proof of the cause: you have a page that gets zero impressions for your target query, rather than ranking poorly. That's consistent with the page not making it into the candidate set, but it isn't confirmation of that on its own. Technical issues like crawling and indexing, low query demand, or page-level problems can all produce the same symptom, and should be ruled out alongside anything else. A domain-level or topical-identity explanation is one hypothesis worth considering here, not the default or proven explanation.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span></span></div>
+
+  <!-- ============ 4 ============ -->
+  <section class="sec" id="s4">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>Topic Models: From Word Counting to Vectors</h2></div>
+    <p class="rv">To understand what today's fields actually do, it helps to know how the system used to detect topic, and why those earlier methods weren't enough. This path starts with simple word counting and ends at vectors, moving through several different ways of representing and matching topical information along the way.</p>
+
+    <h3 class="rv">The statistical era</h3>
+    <p class="rv">The oldest method was counting. If a word shows up often in one document and rarely across the rest of the collection, that document is probably about that word. That's the logic behind TF-IDF, and a more refined version of it, BM25, factors in document length and diminishing returns from repetition.</p>
+    <p class="rv">Lexical, count-based methods like these are computationally cheap, which is useful for Retrieval in general, where speed matters. But they share one fundamental weakness: no understanding of meaning. To this method, "car" and "automobile" are two completely unrelated strings.</p>
+
+    <h3 class="rv">A myth that needs to die</h3>
+    <p class="rv">SEO content still refers to LSI constantly, and has even invented a term for it, "LSI keywords." "LSI keywords" is SEO jargon, not a concept or keyword category that Latent Semantic Indexing, the actual mathematical technique, ever defined.</p>
+    <p class="rv">LSI is a real mathematical technique from the late 1980s, based on singular value decomposition applied to a document-term matrix. But first, there's never been any evidence that Google uses it at web scale. Second, the technique isn't computationally practical for a document collection the size of the web. Third, nothing called an "LSI keyword" is defined anywhere in that method. What tool vendors call "LSI keywords" is usually just statistical word co-occurrence.</p>
+
+    <div class="warn rv">
+      <h4>Why this matters</h4>
+      <p>If an article about Topical Authority talks about "LSI keywords," that article wasn't written from a primary source. That's a quick way to judge the quality of a source.</p>
+    </div>
+
+    <h3 class="rv">Phrase-based Indexing</h3>
+    <p class="rv">Anna Patterson's work at Google marks one important step in this progression. The idea was to index phrases instead of individual words, and, more importantly, to keep a set of related phrases for each one.</p>
+    <p class="rv">Within that model, a document about <span class="term">internal combustion engine</span> would be expected to also contain phrases like <span class="term">crankshaft</span> and <span class="term">cooling system</span>. The presence or absence of expected, related phrases can serve as evidence about how well a document fits a topic.</p>
+    <p class="rv">My interpretation is that this is where the concept of Topical Coverage, as defined in this article, first gets a technical foundation. Neither Patterson nor her patents use the terms Topical Coverage or Topical Authority, this is a connection I'm drawing between that work and the concept this article tracks. A document that's good on a topic, in this model, is one that contains the phrases you'd expect for that topic.</p>
+
+    <h3 class="rv">Enter the vector</h3>
+    <p class="rv">The next stage was converting text into numerical vectors. The core idea: place words, and later sentences and documents, as points in a space with hundreds of dimensions, such that distance in that space corresponds to semantic similarity.</p>
+    <p class="rv">With this, similarity between two documents no longer depends on shared words. Two articles can share no words at all and still land close together as vectors.</p>
+
+    <h3 class="rv">Entities</h3>
+    <p class="rv">The next layer is entities. What separates an entity from a keyword is that an entity refers to an actual thing in the world, not just a string of characters.</p>
+    <p class="rv">In the leaked documentation, there's a field that attaches identified entities to page content. That means the system doesn't just see the string "Saadi" appear in text, it identifies which Saadi.</p>
+
+    <h3 class="rv">A multi-layer intent model</h3>
+    <p class="rv">The traditional split of search intent into informational, navigational, and transactional has been repeated in SEO training for years. It's useful as a starting point, but too coarse for serious work.</p>
+    <p class="rv">In the leaked documentation, there's a field called <span class="en">asteroidBeltIntents</span>. Based on the name and its surrounding context, my inference is that it points toward a more granular way of classifying document intent than the traditional three-bucket model, though this is my reading of the name, not an official description of what the field does. Google hasn't published details of a granular intent model tied to this field. The details of how it actually functions aren't documented.</p>
+
+    <div class="card rv">
+      <span class="kicker">Why this matters for topic mapping</span>
+      <h4>One page, several intents with different weights</h4>
+      <p>Here's the point. Two queries can fall into the same traditional bucket, like informational, while having genuinely different intent. Look only at the bucket, and you'd assume one page covers both. Look at intent, and you see each one may call for a different kind of answer.</p>
+      <p>A concrete example: <span class="term">what is a collision insurance deductible</span> and <span class="term">how do I lower my collision insurance deductible</span> both fall under the traditional informational bucket. But the first wants a definition, the second wants a solution. Whether that means one page or two is a content-design decision, it depends on whether a single page can genuinely serve both needs well, not an automatic rule that different intent requires separate pages.</p>
+    </div>
+
+    <h3 class="rv">Why page-level vectors weren't enough</h3>
+    <p class="rv">Now we get to the point this whole article turns on. Say you have a page whose vector sits exactly at the center of the tax accounting topic. Great. But that page is published on a site where ninety percent of the content is about cooking.</p>
+    <p class="rv">A page-level vector doesn't see that mismatch. To catch it, you'd need something like a domain-level vector, and a way to measure how far the page sits from it. That's where fields such as <span class="en">siteFocusScore</span> and <span class="en">siteRadius</span>, covered next, become relevant to the hypothesis developed here. Their names and existence are documented, the exact way they function is not.</p>
+  </section>
+
+  <div class="divider"><span></span></div>
+
+  <!-- ============ 5 ============ -->
+  <section class="sec" id="s5">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>Patents, Layer by Layer</h2></div>
+
+    <div class="warn rv">
+      <h4>Before reading this section</h4>
+      <p>Verify every patent number before reusing it. The table at the end of this section has a verification-status column. Anything flagged there should be checked directly against a patent database.</p>
+      <p>There's also a methodological principle worth stating up front. Filing a patent doesn't mean implementing it. Companies file plenty of ideas they never build. At most, a patent tells you this way of thinking existed somewhere inside the organization.</p>
+    </div>
+
+    <h3 class="rv">Site Quality and Reference Queries</h3>
+    <p class="rv">This family, often attributed to the Panda algorithm, introduces a concept that's central to our discussion. The core patent is "Site quality score," <span class="en">US9031929B1</span>, invented by April R. Lehman and Navneet Panda, assigned to Google, with a priority date of January 2012 and granted in May 2015. The patent describes categorizing queries as referring to a particular site, and associating other queries with that site as well, including through user selections of that site's results. A ratio built from those counts can then be used to compute a Site Quality Score.</p>
+    <p class="rv">Two things about this idea tend to get overlooked. First, the measure is relative, not an absolute number. A small site in a narrow niche can score well. That's good news for specialized sites in any language.</p>
+    <p class="rv">Second, and this is my interpretation, not something the patent itself states, the patent uses these query associations to compute a Site Quality Score, not to define a site's topic. Those same query associations may also reveal something about how a site is perceived topically. That's my interpretation, not the purpose the patent assigns to the score.</p>
+
+    <h3 class="rv">Phrase-based Indexing and topical clustering</h3>
+    <p class="rv">The core patent here is "Phrase-based indexing in an information retrieval system," <span class="en">US7536408B2</span>, invented by Anna L. Patterson, assigned to Google, initially filed in July 2004. My interpretation is that this family is the technical foundation of the Topical Coverage concept as defined in this article, though the patent itself never uses that term. Its central claim is that for any phrase, you can build a set of related phrases, and judge a document's topic based on whether or not those phrases show up.</p>
+    <p class="rv">The less well-known part is that this same structure is also used for document clustering. Documents with similar phrase patterns get grouped together.</p>
+    <p class="rv">What this family supports is that the system holds a specific expectation of vocabulary for a given topic. What it doesn't support is that packing in more phrases is automatically better. A related patent from the same inventor, "Detecting spam documents in a phrase based information retrieval system" (<span class="en">US8078629B1</span>, granted December 2011), addresses spam detection through unusually dense phrase repetition explicitly.</p>
+
+    <h3 class="rv">Website-level representations and classification</h3>
+    <p class="rv">The patent in this family is a patent application, not a granted patent: "Website representation vector," publication number <span class="en">US20200050707A1</span> (international publication <span class="en">WO2020033805</span>), invented by Yevgen Tsykynovskyy, assigned to Google LLC. My interpretation is that this family is the most direct technical precedent for what we now call topical focus, though the application text never uses that term. The core idea is that content from a website, including its domains and subdomains, can be used to build website-level representations, which can then be classified within particular Knowledge Domains.</p>
+    <p class="rv">What matters here is that this kind of website-level classification isn't a new idea discovered when the leaked fields surfaced. It existed in patent literature years earlier.</p>
+    <p class="rv">What this application directly supports is that classification can happen using website-level representations placed within particular Knowledge Domains. What it doesn't support is that every site gets a single label, the text notes a site can receive different scores or classifications across different Knowledge Domains. But that point sits more in the description of the invention than in an independent patent claim, and reading this as evidence for a concept like Topical Focus is my own interpretation and extension of it, not the application's core claim.</p>
+
+    <h3 class="rv">The Information Gain family and the logic of non-repetition</h3>
+    <p class="rv">The core patent here is "Contextual estimation of link information gain," application number <span class="en">US20200349181A1</span>, granted as <span class="en">US11354342B2</span>, assigned to Google. This family addresses a question that's become critical in an era of mass content production: relative to information a user has already been presented with or viewed in a given context, what does an additional document add?</p>
+    <p class="rv">The logic is contextual: a document's Information Gain is estimated against what's already been presented to or viewed by a user in that specific context, not against the web as a whole. A document that only restates information already covered in that context contributes little by this measure.</p>
+
+    <div class="card rv">
+      <span class="kicker">Direct consequence for topic mapping</span>
+      <h4>Repetition isn't coverage</h4>
+      <p>My practical interpretation, not a documented Google rule, is that a topic map full of near-duplicate pages, each restating the same point under a different title, may add little incremental value in situations where a user or system is already working with that same information. This is a reading of the Information Gain concept applied to content planning, not a claim that such pages receive zero or near-zero ranking value.</p>
+    </div>
+
+    <h3 class="rv">The Query Variants family</h3>
+    <p class="rv">The core patent here is "Generating query variants using a trained generative model," <span class="en">US11663201B2</span>, assigned to Google, initially filed in 2018 with a priority date of 2017, granted in May 2023. This family covers generating variants of a query using a trained generative model, variants can take different forms, such as equivalent phrasings, follow-ups, generalizations, canonicalizations, clarifications, specifications, or translations. Some implementations described in the patent can obtain search-system responses for these generated variants.</p>
+    <p class="rv">My interpretation is that this connects conceptually to Topical Coverage: if a search system explores a broader set of information needs related to a query through generated variants, content that addresses that broader set has more conceptual surface area to be relevant to. That's a connection I'm drawing, not something the patent claims about ranking or selection.</p>
+
+    <p class="tbl-title rv"><b>Patent family summary table</b><span>What each claim supports and doesn't support</span></p>
+  <div class="dt rv">
+    <table>
+      <thead><tr><th>Family</th><th>Supports</th><th>Doesn't support</th><th>Verification</th></tr></thead>
+      <tbody>
+        <tr>
+          <td data-label="Family"><b class="tname">Phrase-based Indexing</b><span class="en">Anna Patterson</span></td>
+          <td data-label="Supports"><span class="yes">The system holds a specific vocabulary expectation for each topic</span></td>
+          <td data-label="Doesn't support"><span class="no">More phrases is always better</span></td>
+          <td data-label="Verification"><span class="yes">US7536408B2</span></td>
+        </tr>
+        <tr>
+          <td data-label="Family"><b class="tname">Site Quality and Reference Queries</b></td>
+          <td data-label="Supports"><span class="yes">Evaluation happens at the domain level, not just the page</span></td>
+          <td data-label="Doesn't support"><span class="no">The existence of a score called "Topical Authority"</span></td>
+          <td data-label="Verification"><span class="yes">US9031929B1</span></td>
+        </tr>
+        <tr>
+          <td data-label="Family"><b class="tname">Site classification</b></td>
+          <td data-label="Supports"><span class="yes">Topic gets assigned at the domain level, not just the page</span></td>
+          <td data-label="Doesn't support"><span class="no">That every site has only one topical label</span></td>
+          <td data-label="Verification"><span class="yes">US20200050707A1 (application)</span></td>
+        </tr>
+        <tr>
+          <td data-label="Family"><b class="tname">Information Gain</b></td>
+          <td data-label="Supports"><span class="yes">A document's value can be assessed relative to information already presented to a user in that context</span></td>
+          <td data-label="Doesn't support"><span class="no">That duplicate or near-duplicate content across the web has zero or near-zero value in every context</span></td>
+          <td data-label="Verification"><span class="yes">US11354342B2</span></td>
+        </tr>
+        <tr>
+          <td data-label="Family"><b class="tname">Query Variants and query expansion</b></td>
+          <td data-label="Supports"><span class="yes">The system can generate multiple variant forms of a query using a generative model</span></td>
+          <td data-label="Doesn't support"><span class="no">That queries are broken into a fixed set of sub-queries, or that each variant guarantees a separate selection opportunity</span></td>
+          <td data-label="Verification"><span class="yes">US11663201B2</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    <p class="rv">The third column is there deliberately. Most writing about these patents only covers the second column. It's the third column that prevents misuse.</p>
+  </section>
+
+  <div class="divider"><span></span></div>
+
+  <!-- ============ 6 ============ -->
+  <section class="sec" id="s6">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>Topic-Related Fields in the Leaked Documentation</h2></div>
+    <p class="rv">In 2024, a large volume of Google's internal Content Warehouse documentation surfaced unintentionally. What surfaced was data structure definitions, not algorithm code. This distinction matters. We know what gets stored. We don't know at what weight, or at what stage, it gets used.</p>
+
+    <h3 class="rv">The underlying engine</h3>
+    <p class="rv">The leaked documentation contains a field called <span class="en">site2vecEmbeddingEncoded</span>. The name is consistent with an encoded site-level embedding, a vector representation of some kind. My interpretation is that this represents a site's topical identity, the documentation itself doesn't describe it in those words. Its exact contents, how it's constructed, what role it plays, and whether it's still in current production use aren't established by the identifier alone. This field is relevant to the hypothesis this article develops about site-level semantic representation, not confirmation of it.</p>
+    <p class="rv">The same documentation also contains another field, <span class="en">asteroidBeltIntents</span>, which came up in the previous section under the multi-layer intent model without naming it directly. The field name is documented, what we can infer about its function comes, to some extent, from the name and its surrounding context, not from an official description. My cautious reading of the name and surrounding context is that it may relate to a more granular way of representing or classifying intent. Exactly how many dimensions it has, how it affects ranking, or whether it's still in use today, isn't documented.</p>
+
+    <h3 class="rv">Topical Focus</h3>
+    <p class="rv">The <span class="en">siteFocusScore</span> field exists in the documentation. Its name suggests some kind of site-level focus-related score. Reading that as a measure of topical concentration, high value meaning specialized, low value meaning general or scattered, is my inference from the name, not something the documentation states directly. The exact computation, scale, directionality, and any thresholds aren't established here, and neither is whether or how it's used in current production. Wherever this article later uses "focus" as a practical concept, that's this article's own model and proxy, not a description of Google's metric.</p>
+    <p class="rv">Three common misreadings are worth ruling out regardless of how the field actually works. The identifier itself doesn't establish this score as a quality measure, this article keeps topical focus and quality as separate concepts, the next section covers that distinction in detail. A high value on a concept like this wouldn't automatically be desirable either, a site fully focused on a topic with zero demand would still have zero traffic from that topic. And this number can't be viewed directly by any tool. Any tool claiming to show you this number is showing you its own estimate.</p>
+
+    <h3 class="rv">Topical Radius</h3>
+    <p class="rv">The <span class="en">siteRadius</span> field exists in the same documentation. Its name suggests some concept of radius or distance, but the identifier alone doesn't establish what it measures, at what level it's computed, or how, if at all, it relates mathematically to <span class="en">siteFocusScore</span>. I don't have a documented basis for describing a page-to-center distance or a site-wide aggregation formula here, so I won't present one as fact.</p>
+
+    <h3 class="rv">The solar-system metaphor, and where it breaks</h3>
+    <p class="rv">For the model I use in this article to reason about focus and radius conceptually, a solar-system metaphor is useful: a central topic as the sun, each page as a planet, distance from center as some form of semantic distance. This is my own conceptual scaffolding for thinking about these ideas, not a reconstruction of how Google's fields are actually computed, and it shouldn't be read as one.</p>
+    <p class="rv">Two things about the metaphor are worth flagging if you use it the way I do. First, in an actual solar system, the sun exists independently of the planets. In this model, the center would be computed from the content itself, which means changing enough of your pages could shift where that center sits. Second, distance in a high-dimensional vector space doesn't behave like two-dimensional intuition. Any diagram of this is a simplification for explanatory purposes, not a picture of an underlying Google architecture.</p>
+
+    <h3 class="rv">Four conceptual site patterns</h3>
+    <p class="rv">This is a framework I use for reasoning about a site's topical shape, not a set of states Google's fields are documented to produce. Before reading on, you might guess which pattern feels closest to your own site. The measurement section later gives you a way to check that guess against your own content.</p>
+
+    <figure class="fig rv">
+      <div class="fig-body">
+        <div class="orbits">
+
+          <div class="orb">
+            <h5>High Focus</h5>
+            <svg viewBox="0 0 200 200" role="img" aria-label="All pages close to the modeled center">
+              <g class="ring" style="fill:none;stroke:var(--line);stroke-dasharray:3 3">
+                <circle cx="100" cy="100" r="72"/><circle cx="100" cy="100" r="44"/>
+              </g>
+              <circle class="core" cx="100" cy="100" r="12" style="fill:var(--brand)"/>
+              <g style="fill:var(--brand-deep)">
+                <circle cx="128" cy="88" r="7"/><circle cx="76" cy="120" r="7"/>
+                <circle cx="112" cy="130" r="7"/><circle cx="70" cy="82" r="7"/>
+                <circle cx="132" cy="115" r="7"/><circle cx="92" cy="66" r="7"/>
+                <circle cx="58" cy="104" r="7"/><circle cx="104" cy="142" r="7"/>
+              </g>
+            </svg>
+            <p class="note">In this model, all pages sit close to a shared center. This is the pattern I'd expect to make a site's topic easiest to read.</p>
+          </div>
+
+          <div class="orb">
+            <h5>Local Deviation</h5>
+            <svg viewBox="0 0 200 200" role="img" aria-label="Most pages close, with a few outliers">
+              <g class="ring" style="fill:none;stroke:var(--line);stroke-dasharray:3 3">
+                <circle cx="100" cy="100" r="72"/><circle cx="100" cy="100" r="44"/>
+              </g>
+              <circle class="core" cx="100" cy="100" r="12" style="fill:var(--brand)"/>
+              <g style="fill:var(--brand-deep)">
+                <circle cx="124" cy="90" r="7"/><circle cx="78" cy="118" r="7"/>
+                <circle cx="110" cy="128" r="7"/><circle cx="74" cy="84" r="7"/>
+                <circle cx="118" cy="118" r="7"/>
+              </g>
+              <g style="fill:var(--warn-dot)">
+                <circle cx="168" cy="52" r="7"/><circle cx="36" cy="158" r="7"/>
+              </g>
+            </svg>
+            <p class="note">Most pages sit close in, with a few outliers further out. In my practical experience, when the outlier count stays small, this pattern hasn't seemed to cause serious problems, though I can't confirm that against Google's actual behavior.</p>
+          </div>
+
+          <div class="orb">
+            <h5>Diluted Core</h5>
+            <svg viewBox="0 0 200 200" role="img" aria-label="Small core buried under a large volume of tangential content">
+              <g class="ring" style="fill:none;stroke:var(--line);stroke-dasharray:3 3">
+                <circle cx="100" cy="100" r="72"/><circle cx="100" cy="100" r="44"/>
+              </g>
+              <circle class="core" cx="100" cy="100" r="12" style="fill:var(--brand)"/>
+              <g style="fill:var(--brand-deep)">
+                <circle cx="118" cy="92" r="7"/><circle cx="84" cy="114" r="7"/>
+              </g>
+              <g style="fill:var(--warn-dot)">
+                <circle cx="150" cy="64" r="7"/><circle cx="52" cy="140" r="7"/>
+                <circle cx="158" cy="132" r="7"/><circle cx="44" cy="66" r="7"/>
+                <circle cx="104" cy="168" r="7"/><circle cx="96" cy="34" r="7"/>
+                <circle cx="172" cy="100" r="7"/><circle cx="30" cy="102" r="7"/>
+              </g>
+            </svg>
+            <p class="note">Real specialization exists within the site's content, but it sits alongside a large volume of tangential material. In my experience, a pattern I see often on sites that have been publishing broadly for years.</p>
+          </div>
+
+          <div class="orb">
+            <h5>Split Identity</h5>
+            <svg viewBox="0 0 200 200" role="img" aria-label="Two separate clusters with no shared center">
+              <g class="ring" style="fill:none;stroke:var(--line);stroke-dasharray:3 3">
+                <circle cx="100" cy="100" r="72"/>
+              </g>
+              <circle cx="100" cy="100" r="9" style="fill:none;stroke:var(--t-court);stroke-dasharray:2 2"/>
+              <text x="100" y="104" text-anchor="middle" font-size="10" font-family="ui-monospace,monospace" style="fill:var(--t-court)">?</text>
+              <circle class="core" cx="54" cy="66" r="11" style="fill:var(--brand)"/>
+              <g style="fill:var(--brand-deep)">
+                <circle cx="38" cy="94" r="7"/><circle cx="72" cy="44" r="7"/><circle cx="76" cy="86" r="7"/>
+              </g>
+              <circle cx="148" cy="136" r="11" style="fill:var(--t-court)"/>
+              <g style="fill:var(--t-court);opacity:.62">
+                <circle cx="164" cy="108" r="7"/><circle cx="128" cy="158" r="7"/><circle cx="124" cy="116" r="7"/>
+              </g>
+            </svg>
+            <p class="note">Two separate clusters of content on one domain, without an obvious shared center. In this model, that would make a single Radius calculation hard to define.</p>
+          </div>
+
+        </div>
+      </div>
+      <figcaption class="fig-cap"><b>FIG. 3</b> A conceptual model I use for thinking about topical shape: the large dot represents an assumed topical center, blue dots represent pages I'd expect to sit close to it, orange dots represent pages I'd expect to sit far from it. This illustrates my framework, not a documented Google classification system.</figcaption>
+    </figure>
+
+    <h3 class="rv">The NSR family and the ambiguity around "chunk"</h3>
+    <p class="rv">The same documentation contains a family of fields prefixed <span class="en">NSR</span>. Google has never officially expanded this abbreviation. Secondary analysis usually reads it as "normalized site rank," but that reading isn't confirmed. At least one well-known analyst has proposed an alternative guess, "Neural Semantic Retrieval." From here on, I'll just use the abbreviation NSR itself.</p>
+    <p class="rv">Within this family, there are structures that appear to distinguish or segment parts of a site or host. This is relevant to the possibility that different sections of a site could be represented separately in some way, I want to be careful not to state that as confirmed ranking behavior, since the documentation doesn't establish how, or whether, that segmentation actually affects ranking.</p>
+    <p class="rv">Now, an ambiguity worth resolving. In SEO writing, the word "chunk" gets used for two entirely different things, and it's a widespread source of confusion. One is splitting text into small pieces for retrieval in vector-based systems, that's what most people mean when they say "chunk." The other is fields in this same documentation that appear to relate to domain-level segmentation, splitting a site into sub-sections for signal computation. There's no evidence here that the two uses are related, beyond sharing a name.</p>
+
+    <h3 class="rv">Vector versioning</h3>
+    <p class="rv">Some site-level fields in this documentation have a data type indicating that version information is stored alongside the value. This may indicate some form of version tracking. It doesn't, by itself, establish that Google retains a historical sequence of prior values, or that any such history functions as a ranking signal.</p>
+
+    <div class="card rv">
+      <span class="kicker">A hypothesis worth flagging, not a documented claim</span>
+      <h4>If history is retained at all</h4>
+      <p>If a system did retain history in some form, one thing worth considering, as my own practitioner hypothesis and not something this documentation establishes, is whether trend over time could matter alongside a current value. I want to be clear this is speculation on my part. I'm not claiming Google preserves a full history of past values, that a gradual improvement outperforms a sudden one, or that any particular pacing of work produces a ranking benefit. None of that follows from a versioned data type alone.</p>
+    </div>
+
+    <div class="warn rv">
+      <h4>A methodological warning</h4>
+      <p>A field existing in this documentation doesn't establish that it's used in live ranking, that it still exists in production today, what it precisely means, how much weight it carries, which direction its effect runs, whether it has any causal effect at all, or how it relates to other fields nearby it in the schema.</p>
+      <p>Reading a field's name as a description of its function is the most common analytical mistake in this space.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span></span></div>
+  <!-- ============ 7 ============ -->
+  <section class="sec" id="s7">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>Topical Focus and Quality Are Two Different Things</h2></div>
+    <p class="rv">I gave this its own section because, in my view, it's the single most important correction of thinking a reader needs here.</p>
+
+    <h3 class="rv">Topical Focus is not the same as Quality</h3>
+    <p class="rv">Say you build a site that's entirely about one narrow topic, with 100 fully focused articles. Your Topical Focus, by this article's working definition, is close to complete. Now say all 100 of those articles are shallow, rewritten from other sources, and unsourced. Does Topical Focus alone tell you this site will do well?</p>
+    <p class="rv">Not by this article's logic. Focus, as defined here, answers what a site is about, not whether it's any good. Topical Focus doesn't guarantee Quality, Trust, or ranking success.</p>
+
+    <h3 class="rv">A general site with high Trust and broad Topical Focus</h3>
+    <p class="rv">Take a large general-interest newspaper. Politics, sports, business, food, everything. By this article's working definition, its focus would be broader and less concentrated than a narrow specialist site. Yet these sites rank well for a huge range of queries. If narrow Focus were the only path to ranking success, that wouldn't be possible.</p>
+    <p class="rv">Here's my explanation, and this is interpretation, not a documented claim: these sites score very high on some other dimension, and in my view their topical pattern is still recognizable, something like a legitimate general-interest media pattern. The Site Classification patent family covered in the patents section (Website representation vector, <span class="en">US20200050707A1</span>) shows that this kind of classification is technically possible, but it doesn't establish that Google actually uses this exact category in live ranking today.</p>
+
+    <div class="card rv">
+      <span class="kicker">A conclusion most consultants get wrong</span>
+      <h4>Recognizable pattern, not necessarily expertise</h4>
+      <p>The advice that your site needs to be niche, stated without qualification, is wrong. What's closer to accurate, within this article's framework, is that your site should have a recognizable topical pattern. Being niche is one recognizable pattern. General-interest media is another. A recognizable pattern is easier to reason about and classify within this framework, a highly irregular topical mix is harder to interpret. I'm not claiming the absence of a recognizable pattern causes ranking problems on its own, only that it makes a site harder to reason about using this framework.</p>
+    </div>
+
+    <h3 class="rv">The reverse case: a fully focused site with thin content</h3>
+    <p class="rv">The opposite scenario is just as instructive, and far more common on sites I've seen produced for local markets. Build a site about one narrow topic with 200 fully focused articles. Its Topical Focus is close to complete.</p>
+    <p class="rv">If those 200 articles are just rewrites of existing material, with no sourcing, no original data, and no first-hand experience behind them, that site won't rank. And worse, the owner will never understand why, because they've followed every piece of conventional advice.</p>
+
+    <div class="card rv">
+      <span class="kicker">A pattern I've seen repeatedly</span>
+      <h4>Flawless structure, repetitive content</h4>
+      <p>I've seen dozens of sites in areas like insurance, loans, and legal content with flawless topical structure. Correct categorization, clean internal linking, complete query coverage. Many of them don't rank well. Because they're all writing the same thing ten other sites already wrote, just with different words.</p>
+      <p>These sites have no problem with Topical Focus, at least by this article's definition. The problem sits elsewhere. A site can be highly focused by this framework's measure and still have pages that add little incremental information. Topical Focus and Information Gain, the mechanism covered in the patents section, describe different dimensions of a site. Placing them side by side here is my own analytical comparison, not a documented pipeline or causal interaction between the two.</p>
+    </div>
+
+    <h3 class="rv">The anomaly effect</h3>
+    <p class="rv">Here I want to separate documented fact from inference. What's documented is that the leaked material contains site-level fields and structures. What's inference is that a site with an unusual topical mix doesn't fit any recognizable pattern in this framework, and that, in my view, makes it harder to reason about.</p>
+    <p class="rv">I've seen this pattern firsthand: a site with half legal content and half fitness content. Neither category is a problem on its own. But that combination doesn't match any recognizable pattern in the framework I use here.</p>
+
+    <h3 class="rv">Quality Ceiling</h3>
+    <p class="rv">There's a point I won't go into in detail, since it's outside the scope of this article, but leaving it unmentioned would be misleading. In the same documentation, there are fields whose names suggest some form of Quality measurement at the site level, and some of these appear to include version or period-related information alongside their values.</p>
+    <p class="rv">I want to be clear about what that does and doesn't establish. It doesn't confirm that Google maintains a running historical Quality score, that low historical Quality creates a fixed ranking ceiling, or that improving Topical Focus can't overcome a weak history quickly. What I take from this, as my own practical hypothesis rather than a documented Google mechanism, is the idea of a "Quality Ceiling", a way of thinking about sites with a weak historical track record, where I'd expect recovery to take longer than a quick structural fix. If you're working on a site with a troubled history, I'd factor that possibility into your timeline expectations, cautiously.</p>
+
+    <div class="warn rv">
+      <h4>The practical takeaway</h4>
+      <p>Topical Focus, as this article defines it, can be a useful thing to build toward. But it isn't the same as Quality, and it isn't sufficient on its own to explain ranking performance. A site can be topically coherent and still be low quality. A site can be topically broad and still be trusted and high quality.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span></span></div>
+
+  <!-- ============ 8 ============ -->
+  <section class="sec" id="s8">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>Coverage, Defined and Bounded</h2></div>
+
+    <h3 class="rv">An industry name, not a documented mechanism</h3>
+    <p class="rv">Unlike other concepts in this article, the term "Coverage Authority" doesn't even have a solid secondary source behind it, and it isn't a documented Google term or mechanism. Where it's useful is that it points, loosely, toward a real technical mechanism this article connects to it conceptually, the Query Variants patent family covered earlier. Don't take the name itself too seriously. Take the underlying mechanism seriously, and keep in mind that the link between the two is this article's interpretation, not a documented equivalence.</p>
+
+    <h3 class="rv">Depth vs. breadth</h3>
+    <p class="rv">Before anything else, you need to know that Coverage pulls in two directions that compete with each other, because your resources are limited. Breadth means how many subtopics you touch. Depth means how far you take each one.</p>
+    <p class="rv">A team that can produce 10 articles a month can either touch 10 subtopics once, or fully cover 3. Both choices are legitimate, but they lead to different outcomes.</p>
+
+    <div class="card rv">
+      <span class="kicker">A rule of thumb I've arrived at through experience</span>
+      <h4>A new site should start with depth</h4>
+      <p>For a new or weak site, depth tends to win out. The reason, in my practitioner experience, is that with shallow breadth, you may fail to build enough depth in any one subtopic to become genuinely competitive, and everything stays half-finished. For a site that's already established in its core, breadth tends to win out, because the core is already secure and growth comes from the edges.</p>
+      <p>The common mistake is that new sites start with breadth, because a long keyword list is tempting.</p>
+    </div>
+
+    <h3 class="rv">Three types of Coverage that get confused with each other</h3>
+    <p class="rv">These three shouldn't be conflated, because each answers a different question, and satisfying one doesn't mean the others are satisfied too. This is an analytical framework for thinking about coverage, not a documented Google metric.</p>
+    <p class="rv">Query Coverage means what percentage of a topic's queries your site has content for. This is the simplest and shallowest measure.</p>
+    <p class="rv">Entity Coverage goes deeper. It means what percentage of the entities relevant to that space your site actually covers in substance, not just mentions by name.</p>
+    <p class="rv">Intent Coverage is the hardest and most valuable. It means how many distinct intents within a topic your site has a genuine answer for, rather than one page trying to answer all of them at once.</p>
+
+    <div class="card rv">
+      <span class="kicker">A concrete example</span>
+      <h4>Auto collision insurance</h4>
+      <p>Query Coverage means articles for <span class="term">collision insurance cost</span> and <span class="term">collision insurance terms</span> and <span class="term">difference between collision and third-party insurance</span> and dozens of other combinations.</p>
+      <p>Entity Coverage means content that genuinely covers specific insurance companies, types of add-on coverage, regulatory bodies, and industry-specific terminology.</p>
+      <p>Intent Coverage means serving someone trying to understand the basics, someone trying to compare options, someone ready to buy, someone who's had a claim and wants the process, and someone who wants to cancel their policy. These are 5 different people with 5 different needs.</p>
+      <p>Most sites claiming full Coverage have only done the first row, and even that with 20 articles that all say roughly the same thing.</p>
+    </div>
+
+    <h3 class="rv">Coverage and Query Variants</h3>
+    <p class="rv">The Query Variants patent describes generating variants of a query using a trained generative model, some implementations described in the patent can obtain search-system responses for these generated variants. It doesn't establish a fixed query-decomposition pipeline, and it doesn't establish that each variant represents a separate, guaranteed retrieval opportunity.</p>
+    <p class="rv">My interpretation is that this connects conceptually to Coverage: if a search system can explore a broader set of query variants around a topic, content that addresses more of that broader set has more conceptual surface area to potentially be relevant. That's a connection I'm drawing, not something the patent claims about selection odds or ranking.</p>
+
+    <div class="warn rv">
+      <h4>Where this argument breaks down</h4>
+      <p>You can't conclude from this that every query variant needs its own separate page. If the unit of Retrieval is a passage or section, several variant forms could plausibly be answered from different parts of a single well-structured page.</p>
+      <p>Whether something needs a separate page or can live as a section within one should be decided based on how different the underlying intent is, not based on how many query variants exist.</p>
+    </div>
+
+    <h3 class="rv">The Coverage ceiling, where volume strategy breaks down</h3>
+    <p class="rv">Here's the point I think matters most in this section. Common advice coming out of courses and articles in this space is to complete your topic map and publish it as fast as possible. The logic is that until the map is complete, you won't see results.</p>
+    <p class="rv">The leaked documentation contains a module called <span class="en">QualityCopiaFireflySiteSignal</span> that holds site-level signals. My interpretation, not something the documentation states in these words, is that these signals may be relevant to detecting scaled-content patterns. Two fields within it bear directly on this piece of advice.</p>
+    <p class="rv">The <span class="en">numOfUrlsByPeriods</span> field records the number of discovered URLs across consecutive 30-day periods, essentially the pace of page-count growth. The <span class="en">numOfArticlesByPeriods</span> field counts pages that crossed a specific quality threshold, reported in secondary sources as a score of 0.8 or higher, over those same 30-day periods. I want to flag that the 0.8 figure comes from secondary reporting, not an official Google statement, and I'm not treating it as a confirmed threshold.</p>
+    <p class="rv">What I take from the existence of these two fields side by side, as my own analytical proxy and not a documented Google signal, is a way of comparing your publishing volume against the volume of content that meets the reported quality condition. I'm not claiming Google computes, stores, or uses this ratio itself, only that it's a useful lens for reasoning about your own output.</p>
+
+    <figure class="fig rv">
+      <div class="fig-body">
+        <div class="panels">
+          <div class="pan">
+            <h5>Stable pattern</h5>
+            <svg viewBox="0 0 320 200" role="img" aria-label="Total URLs and quality-passing URLs grow proportionally">
+              <line x1="14" y1="170" x2="310" y2="170" style="stroke:var(--line)"/>
+              <g class="bar-up" style="fill:var(--text-3);opacity:.32">
+                <rect x="22" y="148" width="15" height="22"/><rect x="70" y="140" width="15" height="30"/>
+                <rect x="118" y="132" width="15" height="38"/><rect x="166" y="124" width="15" height="46"/>
+                <rect x="214" y="116" width="15" height="54"/><rect x="262" y="108" width="15" height="62"/>
+              </g>
+              <g class="bar-up" style="fill:var(--brand)">
+                <rect x="40" y="156" width="15" height="14"/><rect x="88" y="150" width="15" height="20"/>
+                <rect x="136" y="144" width="15" height="26"/><rect x="184" y="138" width="15" height="32"/>
+                <rect x="232" y="132" width="15" height="38"/><rect x="280" y="126" width="15" height="44"/>
+              </g>
+            </svg>
+            <p class="pnote">The gap between the two columns stays roughly constant</p>
+          </div>
+          <div class="pan risk">
+            <h5>Higher-risk pattern, by this framework</h5>
+            <svg viewBox="0 0 320 200" role="img" aria-label="URL count accelerates while quality-passing count stays flat">
+              <line x1="14" y1="170" x2="310" y2="170" style="stroke:var(--line)"/>
+              <g class="bar-up" style="fill:var(--text-3);opacity:.32">
+                <rect x="22" y="150" width="15" height="20"/><rect x="70" y="120" width="15" height="50"/>
+                <rect x="118" y="60" width="15" height="110"/><rect x="166" y="35" width="15" height="135"/>
+                <rect x="214" y="25" width="15" height="145"/><rect x="262" y="40" width="15" height="130"/>
+              </g>
+              <g class="bar-up" style="fill:var(--brand)">
+                <rect x="40" y="158" width="15" height="12"/><rect x="88" y="155" width="15" height="15"/>
+                <rect x="136" y="153" width="15" height="17"/><rect x="184" y="151" width="15" height="19"/>
+                <rect x="232" y="153" width="15" height="17"/><rect x="280" y="156" width="15" height="14"/>
+              </g>
+            </svg>
+            <p class="pnote">The gap between the two columns is widening</p>
+          </div>
+        </div>
+        <div class="plegend">
+          <span><i class="sw g"></i>Total new URLs per period</span>
+          <span><i class="sw b"></i>URLs that crossed the quality threshold</span>
+        </div>
+      </div>
+      <figcaption class="fig-cap"><b>FIG. 4</b> Two publishing patterns across six 30-day periods, visualizing my own proxy for comparing publishing volume against volume that meets the reported quality condition. This is a practitioner framework, not a documented Google classification or detector.</figcaption>
+    </figure>
+
+    <div class="warn rv">
+      <h4>Read this one carefully</h4>
+      <p>This doesn't mean publish less. It means, in my practitioner framework, that your Publishing Velocity should stay proportionate to your quality capacity.</p>
+      <p>If your team can genuinely produce 10 excellent articles a month, I'd consider publishing 100 a month a risky pattern by this framework, not necessarily because faster publishing is inherently bad, but because the gap it opens between total output and quality-passing output is what concerns me here. This is my practitioner recommendation, not a documented ranking consequence Google has confirmed.</p>
+      <p>This directly challenges the advice to publish a complete topic map as fast as possible. Not because the topic map itself is a bad idea, but because, in my view, the pace at which you execute it should have a constraint.</p>
+    </div>
+
+    <h3 class="rv">The saturation point and diminishing returns</h3>
+    <p class="rv">Within a defined topic, the set of genuinely distinct information needs can, in my experience, become increasingly exhausted over time. As that happens, additional pages may become more repetitive or marginal relative to what's already there.</p>
+    <p class="rv">By analogy with the Information Gain concept covered earlier, I'd expect a document's incremental informational value to decline in that kind of context. Continuing to expand coverage past that point may also push content toward more tangential areas, by this article's model, though I wouldn't call either of these inevitable, they're patterns I've observed rather than fixed rules.</p>
+    <p class="rv">Spotting this saturation point is hard, but there's one practical tell I rely on. When you find yourself pulling the next article's title out of the previous one and just rewording it, that's usually a sign you've reached it.</p>
+
+    <h3 class="rv">Why Coverage without Quality dilutes Focus</h3>
+    <p class="rv">This section connects Coverage and Focus, and explains why the two sometimes end up in conflict, within the model this article uses. In this article's own vector-based approximation, not a documented Google formula, I treat a site's topical center as something that shifts based on the content published around it. I introduced this idea under the solar-system metaphor, and here's where it plays out in practice, within that model.</p>
+    <p class="rv">When you add tangential content in pursuit of more Coverage, two things happen at once, in this model. First, the new pages carry a large Radius, by this article's framework. Second, and more importantly, the modeled center itself shifts toward them. That would mean your core pages, without a single word changing, end up modeled as further from center than before.</p>
+
+    <div class="card rv">
+      <span class="kicker">An illustrative case</span>
+      <h4>When growth comes at the core's expense</h4>
+      <p>I've seen this pattern with a site in medical equipment that had written exclusively about that topic for 3 years and ranked well in its core. To grow, they decided to also cover general health, nutrition, and fitness, reasoning that these topics were related and had more traffic potential.</p>
+      <p>18 months later, total traffic was up, but their medical equipment rankings had dropped. The core pages hadn't been touched.</p>
+      <p>In my interpretation, what had likely shifted was something at the level of the domain's topical identity, though I can't confirm that with certainty. Improving those same medical pages alone might not have addressed that underlying issue, since the problem, by my reading, didn't originate on those pages. The real question, in my view, is whether that new branch, general health, nutrition, and fitness, is meant to become an independent second specialty, or whether it needs to be pulled back.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span></span></div>
+
+  <!-- ============ 9 ============ -->
+  <section class="sec" id="s9">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>Topical Focus and Site Structure</h2></div>
+
+    <h3 class="rv">Why a good page might get less visibility on a scattered site</h3>
+    <p class="rv">Cold Start itself, as covered earlier, is historically documented. Connecting it to site-level topical identity is my hypothesis, not something Google has confirmed. Within that model, a coherent site could offer a more useful prior for reasoning about a new page, while a scattered site could offer a less informative one. I'm not claiming Google definitely uses domain identity to set an initial score, that a page receives a lower starting position, or that it has to "make up" any specific deficit through Behavioral Data. This is a hypothesis about how topical coherence might matter, not a description of a documented ranking sequence.</p>
+
+    <h3 class="rv">Where a multi-topic site works</h3>
+    <p class="rv">The short answer is that it works when each topic has enough volume and quality to form its own recognizable pattern on its own terms. Multi-topic sites aren't inherently a problem, plenty work fine. As a rule of thumb from my own experience, not a Google threshold, if your second topic has only 15 articles, that's not a second specialty yet, it's more likely a deviation from the site's main focus. I want to be clear this number is a practitioner heuristic I use, not a documented Google cutoff.</p>
+
+    <h3 class="rv">Subdomain or subdirectory</h3>
+    <p class="rv">This old question gets a clearer answer within the framework this article has built, though it's still not a universal rule, and this is a site-architecture and organizational choice, not a claim about how Google treats subdomains for ranking purposes. If your two topics genuinely represent two separate businesses, and each has enough volume and quality on its own, a subdomain can create a cleaner organizational boundary between them, at least from a structural and user-experience standpoint.</p>
+    <p class="rv">If one of the two topics is small, spinning off a subdomain for it can fragment a limited amount of content and make that section harder to establish as a meaningful property in its own right. In that case, a subdirectory tends to work better, or simply not building out that content at all.</p>
+
+    <div class="card rv">
+      <span class="kicker">A concrete example</span>
+      <h4>A decor blog on top of a building materials store</h4>
+      <p>A building materials store that also runs a blog about interior decor. If that blog has 300 articles and pulls meaningful monthly traffic and inbound links on its own, it's effectively functioning as its own media property, and a subdomain becomes a reasonable option to consider.</p>
+      <p>If it has 20 articles written just to fill out the blog, the more important question isn't which URL structure to use, it's whether that topic deserves sustained investment at all. That's the decision to make, not an automatic call to delete it.</p>
+    </div>
+
+    <h3 class="rv">Old off-topic content</h3>
+    <p class="rv">This is the most common question I hear in consulting sessions, and it's also where the most common wrong answer shows up, the advice to delete anything off-topic. That answer is wrong because it ignores other variables that matter. I've laid out the decision tree for this in the execution framework section.</p>
+  </section>
+
+  <div class="divider"><span></span></div>
+
+  <!-- ============ 10 ============ -->
+  <section class="sec" id="s10">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>Information Architecture and Implementation</h2></div>
+
+    <h3 class="rv">The Topic Map, without the mythology</h3>
+    <p class="rv">A Topic Map isn't complicated. It's a conceptual model of your subject area, one that lays out what exists within that space and how those pieces relate to each other.</p>
+    <p class="rv">What separates it from a keyword list is that its unit is the concept, not the search phrase. Two different search phrases can represent the same concept, and one search phrase can carry several concepts inside it.</p>
+
+    <ol class="steps rv">
+      <li>Write out the list of entities in your subject area. For collision insurance, that's things like insurance company, policy, claim, adjuster, deductible, add-on coverage, and so on.</li>
+      <li>For each entity, write out its attributes. How many types of deductible exist, how it gets calculated, whether it's adjustable.</li>
+      <li>Map the relationships between entities. Which entity is a prerequisite for which.</li>
+      <li>Only now, go to your query data and see what people actually ask about each node. If a node has no search demand at all, note it down but put it at the bottom of the priority list.</li>
+      <li>For each node, decide whether it needs its own page or belongs as a section within another page. Base that decision on how different the intent is, not on search volume.</li>
+    </ol>
+
+    <h3 class="rv">A critique of the hub-and-spoke model</h3>
+    <p class="rv">The common model is to build a parent page with child pages linking to it. This works in plenty of cases, but it has two shortcomings that don't get talked about enough.</p>
+    <p class="rv">First, it imposes a tree structure on something that's often actually a network, not a tree. Many concepts relate to several other concepts, not just one parent.</p>
+    <p class="rv">Second, when this gets executed mechanically, the parent page turns into a list of links with throwaway intro text, a page nobody reads that exists purely for the sake of structure.</p>
+
+    <h3 class="rv">Internal Linking, two separate functions</h3>
+    <p class="rv">Internal Linking does two different things, and they shouldn't be conflated. The first function is redistributing importance, internal links can pass PageRank-like importance, or link equity, around a site, similar in logic to how PageRank works. The second function is signaling a semantic relationship. Anchor text and surrounding context can provide evidence about how two pages relate to each other, though not a guaranteed or fixed interpretation.</p>
+
+    <div class="warn rv">
+      <h4>A less well-known penalty</h4>
+      <p>The leaked documentation contains a field called <span class="en">anchorMismatchDemotion</span>. Based on its name and surrounding context, the common reading is that it relates to a mismatch between anchor text and the content of the destination page, though the documentation itself doesn't spell out the exact nature of that mismatch, this is my interpretation, not an official description.</p>
+      <p>If that reading holds, the practical takeaway I draw from it is that mechanically anchoring with a target keyword that doesn't actually match the destination page's content is a pattern I'd steer away from, not that doing so is confirmed to trigger any specific demotion.</p>
+    </div>
+
+    <h3 class="rv">Signal consistency</h3>
+    <p class="rv">A page's title, its main heading, and the anchor text pointing to it from elsewhere should point at the same topic and intent, without contradicting each other. The wording doesn't need to match exactly, what matters is that none of them frame the page as being about something different. This is the simplest and cheapest thing you can check, and it gets overlooked surprisingly often on sites I've worked with. I've seen a page whose title was about a tutorial, whose heading was about a purchase, and whose internal anchor text pointed at pricing, three different framings for one page.</p>
+
+    <h3 class="rv">Taxonomy, URL structure, and categorization</h3>
+    <p class="rv">Your category structure is your formal statement about the site's topical organization. If your categories don't match the reality of your content, you're sending a conflicting signal. In my experience, I usually don't find a separate category useful when it contains only 2 or 3 items, this is a practitioner heuristic I use, not a documented Google minimum. Either skip a category that thin, or merge it into a broader one. Category structure by itself doesn't create topical authority.</p>
+
+    <h3 class="rv">Publishing order</h3>
+    <p class="rv">A question I get asked a lot is whether it matters which article you publish first. The honest answer is there's no direct documentation on publishing order. What exists is this indirect line of reasoning, entirely within the vector model this article uses, not a description of how Google actually computes anything.</p>
+    <p class="rv">Within that model, a site's modeled topical center shifts based on its content. In a site's early days, with only a handful of articles, each one carries more relative weight in shaping that modeled center simply because there's less existing content to average against. As a site grows into the hundreds of articles, the modeled impact of any single new article shrinks.</p>
+    <p class="rv">The practical takeaway, as a rule of thumb from my own experience rather than any documented Google threshold, is that your first 10 to 20 articles do a lot of work in shaping a site's early topical identity. Publish scattered content during that early stage, and you risk shaping a blurrier identity that costs more to fix later. This is an inference, not something documented, but it's an inference with essentially no downside, since starting from your core is a sound approach regardless.</p>
+
+    <h3 class="rv">Supporting pages vs. revenue pages</h3>
+    <p class="rv">Every Topic Map has two kinds of pages, and confusing them is one of the more costly mistakes you can make. A revenue page connects directly to income, product pages, service pages, campaign landing pages.</p>
+    <p class="rv">A supporting page doesn't make money on its own, but it does three things: it serves informational needs earlier in the decision journey, it fills out the site's informational structure around its commercial topics, and it creates useful internal-link paths toward revenue pages.</p>
+
+    <div class="card rv">
+      <span class="kicker">A resource-allocation rule of thumb</span>
+      <h4>A one-to-three ratio</h4>
+      <p>The first common mistake is putting all your budget into revenue pages. The risk, in my experience, is a site that's commercially focused but informationally thin around its core topics. The second common mistake is putting everything into the blog. The risk there is a large informational footprint with a weak connection to anything commercial, traffic without revenue, and eventually a content budget that gets cut after a year.</p>
+      <p>The ratio I've settled on in my own projects, purely as a practitioner heuristic and not a claim about any ranking-optimal ratio, is roughly one to three, three supporting pages for every revenue page. This isn't a rule, it depends on the decision cycle in your particular space. In a space with a long decision cycle, like insurance or enterprise software, that ratio should probably run higher.</p>
+      <p>For commercially oriented topic maps, I usually look for a natural path from a supporting page toward a relevant revenue page. If I can't find one, that's a reason to question the page's role in the topic map, not proof by itself that the page shouldn't exist.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span></span></div>
+
+  <!-- ============ 11 ============ -->
+  <section class="sec" id="s11">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>Author and Source</h2></div>
+
+    <h3 class="rv">What can actually be cited</h3>
+    <p class="rv">The leaked documentation contains a field called <span class="en">authorObfuscatedGaiaStr</span>, whose name is consistent with a structured author identifier. That suggests the system holds an author as an entity separate from the page itself. That's the most that can be said with confidence. What use is made of this identifier, and with what weight, isn't documented. This identifier doesn't establish an author authority score, a reputation score, an E-E-A-T score, or that author identity functions as a ranking factor, it establishes that a structured author-related identifier exists in the documentation, nothing more.</p>
+
+    <h3 class="rv">Site Credibility vs. Author Credibility</h3>
+    <p class="rv">These two shouldn't be treated as one thing. A site can be tightly focused on a topic while its authors have no recognizable track record at all. The reverse is possible too.</p>
+    <p class="rv">A practical point worth flagging: a genuine subject-matter expert can easily have little or no visible digital footprint, this is especially common in fields and languages where expert commentary hasn't traditionally moved online. In that situation, I'd generally prioritize making that person's real-world identity and expertise more clear and verifiable over simply producing more content. I'm not claiming this guarantees any particular ranking outcome, or that Google directly rewards digital presence, only that it's a reasonable prioritization call in cases like this.</p>
+
+    <h3 class="rv">A common mistake</h3>
+    <p class="rv">Building a fake author, complete with a photo and a fabricated bio, to simulate expertise that doesn't actually exist. Setting the ethics aside, a fabricated profile doesn't establish real expertise, reputation, or credibility, and a bio the site wrote about itself isn't independent evidence of any of those things. Genuine external evidence, references to a real person that exist outside your own site, can make an identity more independently verifiable, but I'm not claiming a specific Google ranking mechanism or author score built on that. I also wouldn't assume every fabricated persona necessarily has zero external footprint, some do get built up over time. The core problem is simpler than any ranking mechanism: a fabricated author isn't a substitute for a real one.</p>
+  </section>
+
+  <div class="divider"><span></span></div>
+
+  <!-- ============ 12 ============ -->
+  <section class="sec" id="s12">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>Measurement</h2></div>
+    <p class="rv">Everything up to this point has been conceptual. From here on, it's tooling.</p>
+
+    <h3 class="rv">What you can't actually measure</h3>
+    <p class="rv">None of the fields named in this article are visible from outside Google. No tool has access to them. So anything we build here is a homemade proxy. We're constructing a metric with similar logic, just so we can tell which direction we're moving in. Our number isn't the same as Google's internal number, and it isn't meant to be. Tracked over time, this kind of proxy is mainly useful for comparing a site against its own past self, not for reading Google's internal trend. Movement in this metric doesn't necessarily reflect movement in whatever Google's internal representation actually is, and it doesn't establish anything about ranking causality on its own.</p>
+
+    <h3 class="rv">Measuring Topical Focus with Google Search Console data</h3>
+    <p class="rv">The simplest method, and it needs no extra tooling. Export your queries from the last 16 months. Use query clustering, manual or automated, to group them into topical clusters. Now check what percentage of your total impressions falls within your largest cluster.</p>
+    <p class="rv">If that number declines over time, by this homemade metric, your observable Topical Focus is diluting, even if total traffic stays flat. I want to be clear this is a proxy of my own design, it doesn't expose Google's <span class="en">siteFocusScore</span>, and Search Console has no way to reveal that field directly.</p>
+
+    <h3 class="rv">Impression Share across a topic's query set</h3>
+    <p class="rv">The previous metric gave you overall focus. This one measures your standing within one specific topic. Build a list of queries for that topic, from your own query data and from keyword research. Now pull two numbers: what percentage of those queries you get any impressions for at all, and what your total impression volume is across that set.</p>
+    <p class="rv">The first number reflects your Coverage, by this proxy. The second is an observable visibility signal within that query set, worth treating as one input rather than a pure measure of strength, since total impressions can also be shaped by search demand, query mix, seasonality, and how coverage happens to line up with what people are searching. A high first number paired with a low second number, where you're showing up broadly but with little volume anywhere, may be worth investigating as a sign that depth is missing, in the sense covered in the depth-versus-breadth discussion earlier, though it's not a diagnosis on its own.</p>
+
+    <h3 class="rv">Measuring semantic distance from a site's center</h3>
+    <p class="rv">Here's a method for putting a number on the Radius idea covered earlier, as a practitioner approximation, not a reproduction of anything Google does internally. We convert each page's text into a vector, treat the average of all vectors as an approximate site center, and calculate each page's distance from that center.</p>
+
+    <div class="codebox rv">
+      <div class="chead">
+        <b>A homemade approximation of Topical Radius and Topical Focus</b>
+        <span class="lang">python</span>
+      </div>
+<pre><code>#  pip install sentence-transformers trafilatura numpy requests
+
+import numpy as np
+import requests
+import trafilatura
+from sentence_transformers import SentenceTransformer
+
+MODEL = "intfloat/multilingual-e5-large"
+model = SentenceTransformer(MODEL)
+
+
+def fetch_text(url: str, max_chars: int = 6000) -> str | None:
+    try:
+        html = requests.get(url, timeout=20).text
+        text = trafilatura.extract(
+            html, include_comments=False, include_tables=False
+        )
+        return text[:max_chars] if text else None
+    except Exception:
+        return None
+
+
+def embed(texts: list[str]) -> np.ndarray:
+    prefixed = [f"passage: {t}" for t in texts]
+    return model.encode(prefixed, normalize_embeddings=True)
+
+
+def analyse(urls: list[str]) -> list[dict]:
+    pages = []
+    for u in urls:
+        t = fetch_text(u)
+        if t and len(t) &gt; 300:
+            pages.append({"url": u, "text": t})
+
+    vectors = embed([p["text"] for p in pages])
+
+    centroid = vectors.mean(axis=0)
+    centroid = centroid / np.linalg.norm(centroid)
+
+    for page, vector in zip(pages, vectors):
+        similarity = float(np.dot(vector, centroid))
+        page["similarity"] = round(similarity, 4)
+        page["radius"] = round(1 - similarity, 4)
+        del page["text"]
+
+    return sorted(pages, key=lambda p: p["radius"], reverse=True)
+
+
+def focus_score(results: list[dict]) -> float:
+    return round(float(np.mean([r["similarity"] for r in results])), 4)
+
+
+if __name__ == "__main__":
+    urls = [line.strip() for line in open("urls.txt") if line.strip()]
+    results = analyse(urls)
+
+    print(f"focus score: {focus_score(results)}")
+    print("\noutliers:")
+    for r in results[:20]:
+        print(f"{r['radius']:.4f}  {r['url']}")
+</code></pre>
+    </div>
+
+    <p class="rv">This uses <span class="en">intfloat/multilingual-e5-large</span> as the embedding model, with the <span class="en">passage:</span> prefix convention and normalized cosine similarity, this is entirely this article's own measurement method, not a reconstruction of Google's embeddings. A page scoring well on this script tells you nothing about how it scores against Google's actual internal representation, whatever that representation may be.</p>
+
+    <div class="card rv">
+      <span class="kicker">How to use the output</span>
+      <h4>Trend matters, not the number</h4>
+      <p>Don't judge the Topical Focus number in isolation. Run it monthly and watch the trend against your own past runs, not the number itself in absolute terms. The pages with the highest distance scores are candidates worth reviewing, not a fixed list of pages to act on. There's nothing meaningful about the number 20 specifically, that's just how many rows the example script prints. A high distance score doesn't automatically mean a page should be deleted or merged, and not every outlier is causing a problem, review them with the same decision tree covered later in this article rather than acting on the number alone.</p>
+      <p>One thing to watch for: if your site genuinely covers two separate topics, a single centroid can become misleading, since it can land somewhere between two clusters where no actual page exists. In that case, running clustering first, KMeans with 2 or 3 clusters is a reasonable exploratory starting point, not a universal setting, can help surface the underlying structure before calculating a separate center for each cluster.</p>
+    </div>
+
+    <h3 class="rv">The Publishing Velocity vs. Quality ratio</h3>
+    <p class="rv">A practitioner proxy inspired by the period-based fields discussed earlier in this article, not a reproduction of them. It's simple and needs no tooling. For each of the past several months, log two numbers: how many URLs you published, and how many of those crossed some success bar you define yourself within that same period. The bar is entirely up to you, for example, a page that picked up at least 100 impressions in its first 3 months is just one possible example, not an approximation of any Google quality threshold.</p>
+    <p class="rv">If the first column climbs steeply while the second stays flat, that resembles the high-risk pattern described earlier in this article's framework, by this same proxy logic.</p>
+
+    <h3 class="rv">Diagnostic signals worth investigating</h3>
+    <p class="rv">These patterns are worth looking into, not proof of topical dilution on their own, they can also result from demand shifts, seasonality, ranking changes elsewhere, indexing changes, or a site simply expanding into new territory.</p>
+    <ul class="check rv">
+      <li>Your largest topical cluster's share of total impressions declines month over month.</li>
+      <li>The number of unique queries you get impressions for rises while total clicks stay flat, which could mean you're showing up more at the margins than in your core.</li>
+      <li>Average position on core queries gets worse while average position on peripheral queries improves.</li>
+      <li>The ratio of indexed pages to pages actually getting impressions declines.</li>
+    </ul>
+
+    <h3 class="rv">A realistic timeframe for seeing an effect</h3>
+    <p class="rv">Structural and topical changes tend to take a while to show an effect. In my experience, I usually want several months of data before judging a structural change, for a site with a few hundred pages, 6 months has been a reasonable rough review window for me. For a larger site, I'd expect to need longer. I'd be skeptical of anyone promising a durable Topical Authority outcome on a fixed six-week schedule, that's professional judgment on my part, not a documented Google rule about timing.</p>
+  </section>
+
+  <div class="divider"><span></span></div>
+
+  <!-- ============ 13 ============ -->
+  <section class="sec" id="s13">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>Myths and Common Mistakes</h2></div>
+
+    <ul class="myths rv">
+      <li>
+        <b>There's a score called Topical Authority, and it can be measured.</b>
+        <p>This article hasn't found evidence of a single measurable Google score or system matching the SEO industry's broad concept of Topical Authority. What it examines instead is several separate fields and mechanisms relevant to different dimensions of the idea, without assuming those fields definitively measure what their names suggest.</p>
+      </li>
+      <li>
+        <b>Writing 100 articles on one topic means you've built authority.</b>
+        <p>Not by itself. If those 100 articles add little in the way of Information Gain, in the contextual sense covered earlier, they're not establishing authority just by existing. Whether publishing volume is outpacing quality is something this article treats as a practitioner proxy worth watching, not a documented Google signal.</p>
+      </li>
+      <li>
+        <b>The more specialized, the better.</b>
+        <p>That's too broad. Specializing in a topic with no demand gets you a very narrow, highly concentrated focus by this article's working definition, and zero traffic from that topic.</p>
+      </li>
+      <li>
+        <b>High Topical Focus means a high-quality site.</b>
+        <p>No. Topical Focus and Quality are separate concepts here, and one doesn't imply the other.</p>
+      </li>
+      <li>
+        <b>A field's name tells you what it does.</b>
+        <p>Wrong, and it's the most common analytical mistake in this space. Internal engineering naming conventions aren't official documentation.</p>
+      </li>
+      <li>
+        <b>A filed patent means the system got built.</b>
+        <p>Not necessarily. At most, it shows that this way of thinking existed somewhere.</p>
+      </li>
+      <li>
+        <b>"LSI keywords" need to be in your text.</b>
+        <p>"LSI keywords" is SEO jargon, not a concept or keyword category that Latent Semantic Indexing, the actual mathematical technique, ever defined.</p>
+      </li>
+      <li>
+        <b>A term used by a third-party tool reflects an actual Google concept.</b>
+        <p>Wrong, and this one comes up constantly. Metrics built by commercial tools are proprietary, tool-created metrics. They don't give you direct access to Google's internal fields or scores, and no official equivalence should be assumed. When a tool shows you a "Topical Authority score," that number is something the tool made up, not something it read from Google. Used consistently, those numbers can still work as comparative proxies against competitors. Citing them as if they describe how Google's algorithm actually works doesn't.</p>
+      </li>
+      <li>
+        <b>An analyst's interpretation is the same as what the document says.</b>
+        <p>Analysis of leaked documentation often includes interpretation layered on top of what's actually documented. Credible analysis distinguishes the two explicitly. Failing to separate them is where a lot of the bad claims in this space come from.</p>
+      </li>
+    </ul>
+  </section>
+
+  <div class="divider"><span></span></div>
+
+  <!-- ============ 14 ============ -->
+  <section class="sec" id="s14">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>Execution Framework</h2></div>
+
+    <h3 class="rv">Audit your current Topical Focus</h3>
+    <ol class="steps rv">
+      <li>Run the script from the measurement section against every indexed URL and generate a Radius list.</li>
+      <li>Cluster your Search Console query data into topical clusters.</li>
+      <li>Build your Publishing Velocity to Quality ratio for the past 12 months.</li>
+    </ol>
+    <p class="rv">These three outputs give you a picture of where you stand. Don't make any decisions before you have all three, this is a practitioner recommendation, not a required Google workflow.</p>
+
+    <h3 class="rv">Setting a Topic Boundary based on demand and production capacity</h3>
+    <p class="rv">Look at three factors together: genuine demand, your team's actual production capacity, and how intense the competition is. A workable Topic Boundary is one where all three are realistic at once. If demand is high but your team can only produce 3 articles a month, narrow the boundary. Narrowing it isn't retreating, it's concentrating your resources where they'll count.</p>
+
+    <h3 class="rv">Coverage Gap Prioritization</h3>
+    <p class="rv">Once you've listed your gaps, that list is usually longer than what you can actually produce. The order you fill them in shapes where you'll stand 6 months from now. Score each gap against three factors.</p>
+    <p class="rv">Distance from your topical center: a gap sitting close to your core is more aligned with this article's topical framework, and filling it may strengthen the coherence of your modeled topic structure. I'm not claiming it's inherently easier to rank, or that Google rewards proximity to a topical center, this is about internal coherence within the framework this article uses, not a documented ranking mechanism.</p>
+    <p class="rv">Distance from revenue: whether this content connects to a revenue page, or just brings in traffic on its own.</p>
+    <p class="rv">Real production cost: an article that requires an expert interview or original data is expensive. Factor that into your estimate, not just word count.</p>
+
+    <div class="card rv">
+      <span class="kicker">A suggested order</span>
+      <h4>Start from the core, close to revenue</h4>
+      <p>Sequence it like this. Gaps close to both your core and to revenue usually come first, in my prioritization logic, because they combine topical fit with commercial relevance, not because there's any guarantee of a fast payoff. Second, gaps close to your core but distant from revenue, since these round out your topical identity by this framework. Third, gaps distant from your core but close to revenue, but only cautiously and in limited volume.</p>
+      <p>And last, gaps distant from both your core and from revenue, I'd usually deprioritize these unless there's some other clear strategic, user, or business reason to cover them, not as an automatic exclusion, just where I'd put my attention by default. These are often the pages you'll find two years later at the top of your outlier list, needing a decision about what to do with them.</p>
+    </div>
+
+    <h3 class="rv">Deciding what to do with off-topic content</h3>
+    <p class="rv">This answers the question I left open in the site-structure section. For every page that shows up on your outlier list, work through this path.</p>
+
+    <figure class="fig rv">
+      <div class="fig-body">
+        <div class="tree">
+          <div class="tq">Page with high Radius</div>
+          <div class="tbranch tno-row"><span class="tno"><span class="bar"></span></span></div>
+
+          <div class="tstage" tabindex="0" role="group" aria-label="Does it have meaningful, high-quality inbound links?">
+            <div class="tq">Does it have meaningful, high-quality inbound links?</div>
+            <div class="tbranch">
+              <span class="tlbl y">Yes</span><span class="tarrow"></span>
+              <span class="tout keep">Keep it. If there's a genuinely relevant connection to your core, integrate it with internal links</span>
+            </div>
+            <div class="tbranch tno-row"><span class="tlbl n">No</span></div>
+          </div>
+
+          <div class="tstage" tabindex="0" role="group" aria-label="Does it get meaningful traffic?">
+            <div class="tq">Does it get meaningful traffic?</div>
+            <div class="tbranch">
+              <span class="tlbl y">Yes</span><span class="tarrow"></span>
+              <span class="tout hold">Keep it, but stop expanding this branch</span>
+            </div>
+            <div class="tbranch tno-row"><span class="tlbl n">No</span></div>
+          </div>
+
+          <div class="tstage" tabindex="0" role="group" aria-label="Does it support sales or conversions?">
+            <div class="tq">Does it support sales or conversions?</div>
+            <div class="tbranch">
+              <span class="tlbl y">Yes</span><span class="tarrow"></span>
+              <span class="tout noindex">Keep it, but remove it from the index</span>
+            </div>
+            <div class="tbranch tno-row"><span class="tlbl n">No</span></div>
+          </div>
+
+          <div class="tstage" tabindex="0" role="group" aria-label="Can it be merged into another page?">
+            <div class="tq">Can it be merged into another page?</div>
+            <div class="tbranch">
+              <span class="tlbl y">Yes</span><span class="tarrow"></span>
+              <span class="tout merge">Merge it, and redirect the old URL to the new destination</span>
+            </div>
+            <div class="tbranch tno-row"><span class="tlbl n">No</span></div>
+            <div class="tout del tfinal">Delete it</div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="fig-cap"><b>FIG. 5</b> Deletion sits at the end of this path, not the start. An outlier page with meaningful inbound links is a strong reason to avoid reflexive deletion and to evaluate keeping, merging, or integrating it carefully, not an automatic reason to keep it as is. Deleting something without going through this path risks throwing away value that may have taken years to build.</figcaption>
+    </figure>
+
+    <h3 class="rv">Setting Publishing Velocity to match Quality capacity</h3>
+    <p class="rv">Measure your team's actual Quality capacity, not the capacity you wish you had. Then lock your Publishing Velocity to that number. If a manager or client is pushing for volume, show them the pattern from FIG.4 earlier. I want to be precise about what that gives you: the period-based fields covered earlier establish that Google stores certain period-based counts, that's documented context, it doesn't validate this article's specific ratio, the quality-capacity recommendation itself, a Publishing Velocity ranking signal, or the risk model in FIG.4. The recommendation here is my own practitioner framework, presented with that context, not something Google has confirmed.</p>
+
+    <h3 class="rv">A periodic review schedule</h3>
+    <p class="rv">Review needs a calendar, or it won't happen. The cadence below, and the 12-month window and 20-page sample used throughout this framework, are my own operational defaults, not Google requirements or windows. Twenty pages is simply a manageable review sample, not a threshold.</p>
+
+    <div class="cadence rv">
+      <div class="cad">
+        <span class="when">MONTHLY</span>
+        <p>Update your Publishing Velocity to Quality ratio. Of everything in this framework, this is the one metric worth checking monthly.</p>
+      </div>
+      <div class="cad">
+        <span class="when">QUARTERLY</span>
+        <p>Re-run your Topical Focus and Radius list. Log your largest cluster's share of total impressions. Run 20 newly identified outlier pages through the decision tree.</p>
+      </div>
+      <div class="cad">
+        <span class="when">YEARLY</span>
+        <p>Reassess your Topic Boundary from scratch. Demand shifts, competition shifts, and your team's production capacity shifts too.</p>
+      </div>
+    </div>
+
+    <h3 class="rv">Final checklist</h3>
+    <ul class="check rv">
+      <li>Re-run your Topical Focus and Radius list and compare it against the previous period.</li>
+      <li>Update your Publishing Velocity to Quality ratio.</li>
+      <li>Review categories with fewer than 5 pieces of content, this is a review trigger, not an automatic rule to delete or merge.</li>
+      <li>Run 20 newly identified outlier pages through the decision tree.</li>
+      <li>Log your largest cluster's share of total impressions.</li>
+    </ul>
+  </section>
+
+  <div class="divider"><span></span></div>
+
+  <!-- ============ 15 ============ -->
+  <section class="sec" id="s15">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>The Limits of This Article</h2></div>
+    <p class="rv">I'm writing this because any article that claims to cover everything loses its credibility the moment it says so.</p>
+    <p class="rv">What this article gives you: a conceptual map of the subject, a clear separation between what's documented and what's interpretation, a measurement method you can actually run, and a framework for making decisions.</p>
+    <p class="rv">What this article doesn't give you: feedback on your specific project. No article can. Figuring out which of the four patterns from earlier your own site falls into, and what deserves priority, requires looking at your own data, not reading someone else's.</p>
+    <p class="rv">And one more thing no article or course can give you: patience. In my experience, structural and topical work usually needs several months of data before you can judge it fairly, and most of the failures I've seen came from reacting too soon, not from not knowing what to do. That's a pattern I've observed, not a rule that every effect necessarily takes a fixed amount of time to appear.</p>
+    <p class="rv">None of this means Topical Authority is a documented Google score you're working toward. It's a practical umbrella this article uses to hold together several different kinds of evidence, patents that show a way of thinking existed at Google, documented fields and structures whose exact function often isn't established, mechanisms that are documented where the sources actually support that, and my own interpretations connecting some of these pieces together. Those interpretations stay interpretations even where I find them convincing. A patent shows a way of thinking existed somewhere at Google, not that it shipped. A field name is a name, not a function. A proxy built in this article is a way of watching your own trend, not a window into Google's internal number.</p>
+    <p class="rv">What I do think holds up, even if some of the specific connections I've drawn here turn out to be wrong: topical coherence is something you can actually design into a site, and something you can evaluate for yourself using the proxies this article walks through. You decide what a site is about, and you build the structure so that decision is legible, to you and to your own measurements. Authority, in whatever form it actually takes inside Google's systems, isn't something you can declare into existence the same way. A broad site can still do well. A narrow site isn't automatically better. More content isn't automatically stronger. What this article claims is narrower than a ranking guarantee: coherence gives you a clearer, more legible structure to work from within this framework. It doesn't claim Google universally rewards coherent sites, or that an incoherent site is destined to rank worse.</p>
+  </section>
+
+  <div class="divider"><span></span></div>
+
+  <!-- ============ 16 ============ -->
+  <section class="sec" id="s16">
+    <div class="sec-head rv"><div class="rule"><i></i></div><h2>References</h2></div>
+    <p class="rv">Everything referenced in this article falls into one of these categories. The last category isn't documentation, and it's labeled as such.</p>
+
+    <ul class="legend rv">
+      <li><span class="tier t-court">Court document</span><span>Documents and testimony from the DOJ's antitrust case against Google</span></li>
+      <li><span class="tier t-official">Official document</span><span>Google's own published documentation</span></li>
+      <li><span class="tier t-patent">Patent</span><span>Patent documents and patent families cited throughout this article</span></li>
+      <li><span class="tier t-study">Secondary analysis</span><span>Analysis and interpretation, not documentation. Useful for orientation, not for citation as fact</span></li>
+    </ul>
+
+    <div class="srcbox rv">
+      <div class="srcgrp">
+        <span class="tier t-court">Court document</span>
+        <ul>
+          <li><span class="nm">United States and Plaintiff States v. Google LLC, case number <span class="en">1:20-cv-03010-APM</span></span><a href="https://www.justice.gov/atr/case/us-and-plaintiff-states-v-google-llc-1" target="_blank" rel="nofollow noopener noreferrer">https://www.justice.gov/atr/case/us-and-plaintiff-states-v-google-llc-1</a></li>
+          <li><a href="https://www.justice.gov/d9/2023-11/417508.pdf" target="_blank" rel="nofollow noopener noreferrer">https://www.justice.gov/d9/2023-11/417508.pdf</a></li>
+          <li><a href="https://www.justice.gov/d9/2023-11/417516.pdf" target="_blank" rel="nofollow noopener noreferrer">https://www.justice.gov/d9/2023-11/417516.pdf</a></li>
+          <li><a href="https://www.justice.gov/d9/2023-09/416665.pdf" target="_blank" rel="nofollow noopener noreferrer">https://www.justice.gov/d9/2023-09/416665.pdf</a></li>
+          <li><a href="https://www.justice.gov/d9/2023-11/417518.pdf" target="_blank" rel="nofollow noopener noreferrer">https://www.justice.gov/d9/2023-11/417518.pdf</a></li>
+          <li><a href="https://www.justice.gov/d9/2023-09/416694.pdf" target="_blank" rel="nofollow noopener noreferrer">https://www.justice.gov/d9/2023-09/416694.pdf</a></li>
+        </ul>
+      </div>
+
+      <div class="srcgrp">
+        <span class="tier t-official">Official document</span>
+        <ul>
+          <li><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="nofollow noopener noreferrer">https://developers.google.com/search/docs/fundamentals/seo-starter-guide</a></li>
+          <li><a href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="nofollow noopener noreferrer">https://developers.google.com/search/docs/essentials/spam-policies</a></li>
+          <li><a href="https://developers.google.com/search/docs/appearance/structured-data/sd-policies" target="_blank" rel="nofollow noopener noreferrer">https://developers.google.com/search/docs/appearance/structured-data/sd-policies</a></li>
+          <li><a href="https://developers.google.com/search/blog/2025/05/succeeding-in-ai-search" target="_blank" rel="nofollow noopener noreferrer">https://developers.google.com/search/blog/2025/05/succeeding-in-ai-search</a></li>
+        </ul>
+      </div>
+
+      <div class="srcgrp">
+        <span class="tier t-patent">Patent</span>
+        <ul>
+          <li><span class="nm">Site quality score, <span class="en">US9031929B1</span></span><a href="https://patents.google.com/patent/US9031929B1" target="_blank" rel="nofollow noopener noreferrer">https://patents.google.com/patent/US9031929B1</a></li>
+          <li><span class="nm">Phrase-based indexing in an information retrieval system, <span class="en">US7536408B2</span></span><a href="https://patents.google.com/patent/US7536408B2" target="_blank" rel="nofollow noopener noreferrer">https://patents.google.com/patent/US7536408B2</a></li>
+          <li><span class="nm">Detecting spam documents in a phrase based information retrieval system, <span class="en">US8078629B1</span></span><a href="https://patents.google.com/patent/US8078629B1" target="_blank" rel="nofollow noopener noreferrer">https://patents.google.com/patent/US8078629B1</a></li>
+          <li><span class="nm">Website representation vector — a published patent application, not a granted patent. Publication number <span class="en">US20200050707A1</span>, international publication <span class="en">WO2020033805</span></span><a href="https://patents.google.com/patent/US20200050707A1" target="_blank" rel="nofollow noopener noreferrer">https://patents.google.com/patent/US20200050707A1</a></li>
+          <li><span class="nm">Contextual estimation of link information gain, application number <span class="en">US20200349181A1</span>, granted as <span class="en">US11354342B2</span></span><a href="https://patents.google.com/patent/US20200349181A1" target="_blank" rel="nofollow noopener noreferrer">https://patents.google.com/patent/US20200349181A1</a></li>
+          <li><span class="nm">Generating query variants using a trained generative model, <span class="en">US11663201B2</span></span><a href="https://patents.google.com/patent/US11663201B2" target="_blank" rel="nofollow noopener noreferrer">https://patents.google.com/patent/US11663201B2</a></li>
+          <li><span class="nm">These families are verified and numbered throughout this article. A filed patent or a published patent application doesn't mean it's implemented in live Google Search. For any claim beyond what's stated in this article, consult the source document directly.</span><a href="https://patents.google.com/" target="_blank" rel="nofollow noopener noreferrer">https://patents.google.com/</a></li>
+        </ul>
+      </div>
+
+      <div class="srcgrp">
+        <span class="tier t-study">Secondary analysis</span>
+        <ul>
+          <li><a href="https://www.hobo-web.co.uk/topical-authority/" target="_blank" rel="nofollow noopener noreferrer">https://www.hobo-web.co.uk/topical-authority/</a></li>
+          <li><a href="https://www.hobo-web.co.uk/we-fake-it-googles-illusion-of-understanding-content/" target="_blank" rel="nofollow noopener noreferrer">https://www.hobo-web.co.uk/we-fake-it-googles-illusion-of-understanding-content/</a></li>
+          <li><a href="https://www.hobo-web.co.uk/firefly/" target="_blank" rel="nofollow noopener noreferrer">https://www.hobo-web.co.uk/firefly/</a></li>
+          <li><a href="https://www.hobo-web.co.uk/the-google-content-warehouse-leak-2024/" target="_blank" rel="nofollow noopener noreferrer">https://www.hobo-web.co.uk/the-google-content-warehouse-leak-2024/</a></li>
+          <li><a href="https://ipullrank.com/google-algo-leak" target="_blank" rel="nofollow noopener noreferrer">https://ipullrank.com/google-algo-leak</a></li>
+          <li><a href="https://sparktoro.com/blog/an-anonymous-source-shared-thousands-of-leaked-google-search-api-documents-with-me-everyone-in-seo-should-see-them/" target="_blank" rel="nofollow noopener noreferrer">https://sparktoro.com/blog/an-anonymous-source-shared-thousands-of-leaked-google-search-api-documents-with-me-everyone-in-seo-should-see-them/</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="rv">Statements attributed to Google spokespeople should be checked against the original source, with date and platform, before being cited. Quotes appearing in secondary sources aren't primary sources.</p>
+
+    <div class="seal rv">
+      <h3>Document seal</h3>
+      <ul class="legend">
+        <li><span class="tier t-court">Court document</span><span>Six documents from the DOJ's antitrust case against Google</span></li>
+        <li><span class="tier t-official">Official document</span><span>Four published Google documents</span></li>
+        <li><span class="tier t-study">Secondary analysis</span><span>Six pieces of analysis, none of which are documentation, and each explicitly labeled as such</span></li>
+      </ul>
+      <p class="seal-rule">The fixed rule behind this collection: documented factual claims in this article are tied back to the appropriate source category above. Wherever something was interpretation, I've written interpretation explicitly. Practitioner heuristics, homemade proxies, and firsthand case observations are presented as exactly that, my own working tools and experience, not as primary-source documentation. Wherever something wasn't documentation, I've said so.</p>
+      <div class="seal-chips">
+        <span class="chip">SR-DOC 2026-08-09</span><span class="chip">TOPA-01</span><span class="chip">CC BY 4.0</span><span class="chip">shahramrahbari.github.io</span>
+      </div>
+    </div>
+
+    <div class="card freeuse rv">
+      <span class="kicker">CC BY 4.0</span>
+      <h4>Free to use</h4>
+      <p>This article is free, and any company or team can use it. Sharing it internally, using it in a training session, translating it or quoting part of it in internal documentation, all of that is fine. The only thing I ask is attribution, the author's name and a link to this page.</p>
+    </div>
+
+    <p class="foot">Research grounded in primary documentation. Written by <a href="https://shahramseo.com/" rel="author">Shahram Rahbari</a></p>
+  </section>
+
+</main>
+
+<input type="checkbox" id="ctaClose" aria-hidden="true" tabindex="-1">
+<aside class="ctabar">
+  <label class="x" for="ctaClose" role="button" aria-label="Close">✕</label>
+  <p><b>Document-based analysis</b>Patents, court documents, official documentation</p>
+  <a class="btn btn-1" href="https://www.linkedin.com/in/shahramrahbari/" target="_blank" rel="nofollow noopener noreferrer">Follow</a>
+</aside>
+
+<button type="button" class="totop" id="totop" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  root.classList.add('js-on');
+
+  var btn=document.getElementById('themebtn');
+  if(btn){
+    btn.addEventListener('click',function(){
+      var cur=root.getAttribute('data-theme');
+      if(!cur){cur=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+      root.setAttribute('data-theme',cur==='dark'?'light':'dark');
+    });
+  }
+
+  var sv=window.CSS&&CSS.supports&&CSS.supports('animation-timeline','view()');
+  var ss=window.CSS&&CSS.supports&&CSS.supports('animation-timeline','scroll()');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if(!reduce&&'IntersectionObserver' in window){
+    if(!sv){
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('seen');io.unobserve(e.target);}});
+      },{rootMargin:'0px 0px -8% 0px',threshold:.06});
+      document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+    }
+    var bo=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('grew');bo.unobserve(e.target);}});
+    },{rootMargin:'0px 0px -10% 0px',threshold:.15});
+    document.querySelectorAll('.bar-fill,.bar-up').forEach(function(el){bo.observe(el)});
+  }
+
+  if(!ss){
+    var p=document.getElementById('prog'),tick=false;
+    var upd=function(){
+      var h=document.documentElement.scrollHeight-window.innerHeight;
+      var r=h>0?Math.min(1,Math.max(0,window.scrollY/h)):0;
+      p.style.transform='scaleX('+r+')';
+      var bar=document.querySelector('.ctabar');
+      if(bar) bar.style.transform=r>0.18?'translateY(0)':'translateY(150%)';
+      tick=false;
+    };
+    window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});
+    upd();
+  }
+
+  var tree=document.querySelector('.tree');
+  var stages=document.querySelectorAll('.tstage');
+  if(tree&&stages.length){
+    var pinned=null;
+    var setActive=function(stage){
+      stages.forEach(function(s){
+        var isActive=s===stage;
+        s.classList.toggle('active',isActive);
+        s.classList.remove('next-hint');
+      });
+      if(stage){
+        var next=stage.nextElementSibling;
+        if(next&&next.classList.contains('tstage')) next.classList.add('next-hint');
+        tree.classList.add('has-active');
+      }else{
+        tree.classList.remove('has-active');
+      }
+    };
+    stages.forEach(function(s){
+      s.addEventListener('mouseenter',function(){setActive(s);});
+      s.addEventListener('mouseleave',function(){if(!pinned) setActive(null);});
+      s.addEventListener('focus',function(){setActive(s);});
+      s.addEventListener('click',function(){
+        if(pinned===s){pinned=null;setActive(null);}
+        else{pinned=s;setActive(s);}
+      });
+    });
+    tree.addEventListener('focusout',function(e){
+      if(!tree.contains(e.relatedTarget)&&!pinned) setActive(null);
+    });
+    document.addEventListener('click',function(e){
+      if(pinned&&!tree.contains(e.target)){pinned=null;setActive(null);}
+    });
+  }
+
+  var totop=document.getElementById('totop');
+  if(totop){
+    var totopTick=false;
+    var updTotop=function(){
+      totop.classList.toggle('show',window.scrollY>600);
+      totopTick=false;
+    };
+    window.addEventListener('scroll',function(){if(!totopTick){totopTick=true;requestAnimationFrame(updTotop);}},{passive:true});
+    updTotop();
+    totop.addEventListener('click',function(){
+      window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+    });
+  }
+})();
+</script>
+</body>
+</html>
